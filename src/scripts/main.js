@@ -98,9 +98,13 @@ function initContactForm() {
     const phone = form.querySelector("#phone");
     const name = form.querySelector("#name");
     const message = form.querySelector("#message");
-    const trap = form.querySelector("#company");
+    const honeypots = [...form.querySelectorAll(".honeypot")];
 
-    if (trap.value.trim()) {
+    const isSpam = honeypots.some((field) =>
+      field.type === "checkbox" ? field.checked : field.value.trim()
+    );
+
+    if (isSpam) {
       event.preventDefault();
       return;
     }
