@@ -11,8 +11,8 @@ export const site = {
   whatsappHref: "https://wa.me/41792437224",
   email: "pernet.paysages@gmail.com",
   serviceArea: {
-    fr: "Morges, canton de Vaud et arc lémanique",
-    en: "Morges, the canton of Vaud and the Lake Geneva region"
+    fr: "Canton de Vaud - Arc lémanique",
+    en: "Canton of Vaud - Lake Geneva region"
   },
   web3FormsAccessKey: "61c44701-b41b-4fb3-b132-681efbed17e4",
   analyticsEnabled: false,
@@ -233,7 +233,7 @@ export const copy = {
       eyebrow: "Contact",
       h1: "Parlons de votre extérieur",
       lead:
-        "Création, rénovation, entretien régulier ou terrasse: envoyez un message court. Luca PERNET vous répond pour cadrer la demande et, si utile, une visite.",
+        "Création, rénovation, entretien régulier ou terrasse: envoyez un message court. Réponse rapide pour cadrer la demande et, si utile, une visite.",
       prepareTitle: "Pour aller vite",
       prepare: ["Votre commune", "Le besoin principal", "Le délai souhaité si vous en avez un"],
       form: {
@@ -245,9 +245,11 @@ export const copy = {
         fallback:
           "JavaScript est désactivé. Le formulaire sera envoyé normalement via Web3Forms.",
         success: "Merci, votre message a bien été envoyé.",
-        error: "Une erreur est survenue. Vous pouvez aussi nous contacter par email ou téléphone.",
+        successModal: "Merci. Votre demande est bien partie, nous vous répondrons rapidement.",
+        error: "ERROR: une erreur est survenue. Vous pouvez aussi nous contacter par email ou téléphone.",
+        errorModal: "ERROR: le message n'a pas pu partir. Vous pouvez aussi appeler ou écrire par email.",
         validation:
-          "Merci de renseigner votre nom, un téléphone ou email, et votre message."
+          "ERROR: il manque votre nom, un téléphone ou email, ou votre message."
       }
     },
     privacy: {
@@ -370,7 +372,7 @@ export const copy = {
       eyebrow: "Contact",
       h1: "Let us discuss your outdoor space",
       lead:
-        "Garden creation, renovation, regular maintenance or a terrace: send a short message. Luca PERNET will get back to you to frame the request and, if useful, a visit.",
+        "Garden creation, renovation, regular maintenance or a terrace: send a short message. Quick reply to frame the request and, if useful, a visit.",
       prepareTitle: "To move quickly",
       prepare: ["Your municipality", "The main need", "Desired timing if you have one"],
       form: {
@@ -382,9 +384,11 @@ export const copy = {
         fallback:
           "JavaScript is disabled. The form will be submitted normally through Web3Forms.",
         success: "Thank you, your message has been sent.",
-        error: "Something went wrong. You can also contact us by email or phone.",
+        successModal: "Thank you. Your request has been sent, and we will reply quickly.",
+        error: "ERROR: something went wrong. You can also contact us by email or phone.",
+        errorModal: "ERROR: the message could not be sent. You can also call or email.",
         validation:
-          "Please provide your name, phone or email, and message."
+          "ERROR: your name, phone or email, or message is missing."
       }
     },
     privacy: {

@@ -94,13 +94,14 @@ function pageImageAlt(lang, key, fallback) {
 }
 
 function pageHeading(lang, key, label, title, lead, imagePath, actions = "") {
-  const image = imagePath
+  const sectionClass = key === "contact" ? "page-hero page-hero--contact" : "page-hero";
+  const image = imagePath && key !== "contact"
     ? `<div class="page-hero__media">${imageMarkup(imagePath, pageImageAlt(lang, key, title), { className: "media-frame", loading: "eager" })}</div>`
     : "";
   const heroActions = actions || `
           ${button(route(lang, "contact"), copy[lang].quoteCta, "primary")}
           ${button(route(lang, "projects"), lang === "fr" ? "Voir les réalisations" : "View projects", "secondary")}`;
-  return `<section class="page-hero" aria-labelledby="${attr(key)}-title">
+  return `<section class="${sectionClass}" aria-labelledby="${attr(key)}-title">
     <div class="container page-hero__grid">
       <div class="page-hero__copy">
         <p class="eyebrow">${escapeHtml(label)}</p>
@@ -215,8 +216,10 @@ function header(lang, activeKey) {
         <span aria-hidden="true">/</span>
         <a href="${attr(enPath)}"${lang === "en" ? ' aria-current="true"' : ""}>EN</a>
       </span>
+      <a class="mobile-contact-link" href="${attr(route(lang, "contact"))}">${lang === "fr" ? "Contact" : "Contact"}</a>
       ${button(route(lang, "contact"), c.quoteCta, "primary button--header")}
-      <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="mobile-menu">
+      <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="mobile-menu" aria-label="${escapeHtml(c.menu)}">
+        <span class="menu-toggle__line" aria-hidden="true"></span>
         <span class="menu-toggle__line" aria-hidden="true"></span>
         <span class="menu-toggle__line" aria-hidden="true"></span>
         <span class="sr-only">${escapeHtml(c.menu)}</span>
@@ -535,6 +538,9 @@ function contactForm(lang) {
     <button class="button button--primary" type="submit">${escapeHtml(copy[lang].quoteCta)}</button>
     <p class="form-note">${escapeHtml(c.consent)}</p>
     <p class="form-feedback" data-form-feedback aria-live="polite"></p>
+    <div class="form-modal" data-form-modal hidden role="status" aria-live="polite">
+      <div class="form-modal__panel" data-form-modal-panel></div>
+    </div>
     <noscript><p class="form-note">${escapeHtml(c.fallback)}</p></noscript>
   </form>`;
 }
@@ -552,11 +558,6 @@ function contactPage(lang) {
   <div class="container contact-grid">
     ${contactForm(lang)}
     <div class="contact-side">
-      <div class="contact-actions">
-        ${button(whatsappLink(lang), c.whatsappCta, "primary contact-hero")}
-        ${button(`tel:${site.phoneHref}`, `${c.phoneCta} ${site.phoneDisplay}`, "secondary")}
-        ${button(`mailto:${site.email}`, c.emailCta, "secondary")}
-      </div>
       <div class="contact-note">
         <p><strong>${lang === "fr" ? "Zone d’intervention" : "Service area"}</strong></p>
         <p>${escapeHtml(site.serviceArea[lang])}</p>

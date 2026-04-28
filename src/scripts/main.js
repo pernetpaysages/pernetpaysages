@@ -53,6 +53,21 @@ function setFeedback(feedback, message, type) {
   feedback.className = `form-feedback is-${type}`;
 }
 
+function showFormModal(form, message, type) {
+  const modal = form.querySelector("[data-form-modal]");
+  const panel = form.querySelector("[data-form-modal-panel]");
+  if (!modal || !panel) return;
+
+  panel.textContent = message;
+  panel.className = `form-modal__panel is-${type}`;
+  modal.hidden = false;
+
+  window.clearTimeout(showFormModal.timeout);
+  showFormModal.timeout = window.setTimeout(() => {
+    modal.hidden = true;
+  }, type === "success" ? 5200 : 4200);
+}
+
 function initContactForm() {
   const form = document.querySelector("[data-contact-form]");
   const feedback = document.querySelector("[data-form-feedback]");
@@ -66,16 +81,20 @@ function initContactForm() {
     const honeypot = form.querySelector("[name='botcheck']");
     const text = form.dataset.lang === "fr"
       ? {
-          validation: "Merci de renseigner votre nom, un téléphone ou email, et votre message.",
+          validation: "ERROR: il manque votre nom, un téléphone ou email, ou votre message.",
           email: "Merci de renseigner une adresse email valide.",
           success: "Merci, votre message a bien été envoyé.",
-          error: "Une erreur est survenue. Vous pouvez aussi nous contacter par email ou téléphone."
+          successModal: "Merci. Votre demande est bien partie, nous vous répondrons rapidement.",
+          error: "ERROR: une erreur est survenue. Vous pouvez aussi nous contacter par email ou téléphone.",
+          errorModal: "ERROR: le message n'a pas pu partir. Vous pouvez aussi appeler ou écrire par email."
         }
       : {
-          validation: "Please provide your name, phone or email, and message.",
+          validation: "ERROR: your name, phone or email, or message is missing.",
           email: "Please enter a valid email address.",
           success: "Thank you, your message has been sent.",
-          error: "Something went wrong. You can also contact us by email or phone."
+          successModal: "Thank you. Your request has been sent, and we will reply quickly.",
+          error: "ERROR: something went wrong. You can also contact us by email or phone.",
+          errorModal: "ERROR: the message could not be sent. You can also call or email."
         };
 
     if (honeypot?.checked) {
@@ -87,12 +106,14 @@ function initContactForm() {
     if (!name.value.trim() || !message.value.trim() || !contactValue) {
       event.preventDefault();
       setFeedback(feedback, text.validation, "error");
+      showFormModal(form, text.validation, "error");
       return;
     }
 
     if (contactValue.includes("@") && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(contactValue)) {
       event.preventDefault();
       setFeedback(feedback, text.email, "error");
+      showFormModal(form, text.email, "error");
       return;
     }
 
@@ -111,9 +132,11 @@ function initContactForm() {
       if (!response.ok || result.success === false) throw new Error("Submission failed");
 
       setFeedback(feedback, text.success, "success");
+      showFormModal(form, text.successModal, "success");
       form.reset();
     } catch {
       setFeedback(feedback, text.error, "error");
+      showFormModal(form, text.errorModal, "error");
     }
   });
 }

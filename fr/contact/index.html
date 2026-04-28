@@ -40,8 +40,10 @@
         <span aria-hidden="true">/</span>
         <a href="/en/contact/">EN</a>
       </span>
+      <a class="mobile-contact-link" href="/fr/contact/">Contact</a>
       <a class="button button--primary button--header" href="/fr/contact/"><span>Demander un devis</span></a>
-      <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="mobile-menu">
+      <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="mobile-menu" aria-label="Menu">
+        <span class="menu-toggle__line" aria-hidden="true"></span>
         <span class="menu-toggle__line" aria-hidden="true"></span>
         <span class="menu-toggle__line" aria-hidden="true"></span>
         <span class="sr-only">Menu</span>
@@ -56,22 +58,19 @@
   </nav>
 </header>
 <main id="contenu">
-<section class="page-hero" aria-labelledby="contact-title">
+<section class="page-hero page-hero--contact" aria-labelledby="contact-title">
     <div class="container page-hero__grid">
       <div class="page-hero__copy">
         <p class="eyebrow">Contact</p>
         <h1 id="contact-title">Parlons de votre extérieur</h1>
-        <p class="lead">Création, rénovation, entretien régulier ou terrasse: envoyez un message court. Luca PERNET vous répond pour cadrer la demande et, si utile, une visite.</p>
+        <p class="lead">Création, rénovation, entretien régulier ou terrasse: envoyez un message court. Réponse rapide pour cadrer la demande et, si utile, une visite.</p>
         <div class="hero-actions">
           
           <a class="button button--primary contact-hero" href="https://wa.me/41792437224?text=Bonjour%20Luca%2C%20je%20souhaite%20parler%20de%20mon%20jardin."><span>WhatsApp</span></a>
           <a class="button button--secondary" href="tel:+41792437224"><span>Appeler 079 243 72 24</span></a>
         </div>
       </div>
-      <div class="page-hero__media"><picture class="media-frame">
-    <source srcset="/media/optimized/realisations/projet-03/cover.webp" type="image/webp" sizes="(min-width: 900px) 50vw, 100vw" />
-    <img src="/media/optimized/realisations/projet-03/cover.jpg" alt="Massifs et cheminements dans un jardin du canton de Vaud" loading="eager" decoding="async" />
-  </picture></div>
+      
     </div>
   </section>
 <section class="section">
@@ -96,17 +95,15 @@
     <button class="button button--primary" type="submit">Demander un devis</button>
     <p class="form-note">En envoyant ce formulaire, vous acceptez que vos données soient utilisées uniquement pour répondre à votre demande.</p>
     <p class="form-feedback" data-form-feedback aria-live="polite"></p>
+    <div class="form-modal" data-form-modal hidden role="status" aria-live="polite">
+      <div class="form-modal__panel" data-form-modal-panel></div>
+    </div>
     <noscript><p class="form-note">JavaScript est désactivé. Le formulaire sera envoyé normalement via Web3Forms.</p></noscript>
   </form>
     <div class="contact-side">
-      <div class="contact-actions">
-        <a class="button button--primary contact-hero" href="https://wa.me/41792437224?text=Bonjour%20Luca%2C%20je%20souhaite%20parler%20de%20mon%20jardin."><span>WhatsApp</span></a>
-        <a class="button button--secondary" href="tel:+41792437224"><span>Appeler 079 243 72 24</span></a>
-        <a class="button button--secondary" href="mailto:pernet.paysages@gmail.com"><span>Écrire</span></a>
-      </div>
       <div class="contact-note">
         <p><strong>Zone d’intervention</strong></p>
-        <p>Morges, canton de Vaud et arc lémanique</p>
+        <p>Canton de Vaud - Arc lémanique</p>
       </div>
       <div class="prepare-box">
         <h2>Pour aller vite</h2>
@@ -127,7 +124,7 @@
       <p class="footer-title">Contact</p>
       <p><a href="tel:+41792437224">079 243 72 24</a><br />
       <a href="mailto:pernet.paysages@gmail.com">pernet.paysages@gmail.com</a></p>
-      <p>Morges, canton de Vaud et arc lémanique</p>
+      <p>Canton de Vaud - Arc lémanique</p>
     </div>
     <div>
       <p class="footer-title">Liens utiles</p>

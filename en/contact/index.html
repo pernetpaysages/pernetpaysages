@@ -40,8 +40,10 @@
         <span aria-hidden="true">/</span>
         <a href="/en/contact/" aria-current="true">EN</a>
       </span>
+      <a class="mobile-contact-link" href="/en/contact/">Contact</a>
       <a class="button button--primary button--header" href="/en/contact/"><span>Request a quote</span></a>
-      <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="mobile-menu">
+      <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="mobile-menu" aria-label="Menu">
+        <span class="menu-toggle__line" aria-hidden="true"></span>
         <span class="menu-toggle__line" aria-hidden="true"></span>
         <span class="menu-toggle__line" aria-hidden="true"></span>
         <span class="sr-only">Menu</span>
@@ -56,22 +58,19 @@
   </nav>
 </header>
 <main id="contenu">
-<section class="page-hero" aria-labelledby="contact-title">
+<section class="page-hero page-hero--contact" aria-labelledby="contact-title">
     <div class="container page-hero__grid">
       <div class="page-hero__copy">
         <p class="eyebrow">Contact</p>
         <h1 id="contact-title">Let us discuss your outdoor space</h1>
-        <p class="lead">Garden creation, renovation, regular maintenance or a terrace: send a short message. Luca PERNET will get back to you to frame the request and, if useful, a visit.</p>
+        <p class="lead">Garden creation, renovation, regular maintenance or a terrace: send a short message. Quick reply to frame the request and, if useful, a visit.</p>
         <div class="hero-actions">
           
           <a class="button button--primary contact-hero" href="https://wa.me/41792437224?text=Hello%20Luca%2C%20I%20would%20like%20to%20discuss%20a%20landscaping%20project."><span>WhatsApp</span></a>
           <a class="button button--secondary" href="tel:+41792437224"><span>Call 079 243 72 24</span></a>
         </div>
       </div>
-      <div class="page-hero__media"><picture class="media-frame">
-    <source srcset="/media/optimized/realisations/projet-03/cover.webp" type="image/webp" sizes="(min-width: 900px) 50vw, 100vw" />
-    <img src="/media/optimized/realisations/projet-03/cover.jpg" alt="Planting beds and paths in a garden in Vaud" loading="eager" decoding="async" />
-  </picture></div>
+      
     </div>
   </section>
 <section class="section">
@@ -96,17 +95,15 @@
     <button class="button button--primary" type="submit">Request a quote</button>
     <p class="form-note">By submitting this form, you agree that your data is used only to respond to your request.</p>
     <p class="form-feedback" data-form-feedback aria-live="polite"></p>
+    <div class="form-modal" data-form-modal hidden role="status" aria-live="polite">
+      <div class="form-modal__panel" data-form-modal-panel></div>
+    </div>
     <noscript><p class="form-note">JavaScript is disabled. The form will be submitted normally through Web3Forms.</p></noscript>
   </form>
     <div class="contact-side">
-      <div class="contact-actions">
-        <a class="button button--primary contact-hero" href="https://wa.me/41792437224?text=Hello%20Luca%2C%20I%20would%20like%20to%20discuss%20a%20landscaping%20project."><span>WhatsApp</span></a>
-        <a class="button button--secondary" href="tel:+41792437224"><span>Call 079 243 72 24</span></a>
-        <a class="button button--secondary" href="mailto:pernet.paysages@gmail.com"><span>Email</span></a>
-      </div>
       <div class="contact-note">
         <p><strong>Service area</strong></p>
-        <p>Morges, the canton of Vaud and the Lake Geneva region</p>
+        <p>Canton of Vaud - Lake Geneva region</p>
       </div>
       <div class="prepare-box">
         <h2>To move quickly</h2>
@@ -127,7 +124,7 @@
       <p class="footer-title">Contact</p>
       <p><a href="tel:+41792437224">079 243 72 24</a><br />
       <a href="mailto:pernet.paysages@gmail.com">pernet.paysages@gmail.com</a></p>
-      <p>Morges, the canton of Vaud and the Lake Geneva region</p>
+      <p>Canton of Vaud - Lake Geneva region</p>
     </div>
     <div>
       <p class="footer-title">Useful links</p>
