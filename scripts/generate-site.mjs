@@ -171,7 +171,7 @@ function head(lang, key) {
   <meta name="twitter:title" content="${escapedTitle}" />
   <meta name="twitter:description" content="${escapedDescription}" />
   <meta name="twitter:image" content="${attr(ogImage)}" />
-  <link rel="icon" href="/media/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="/media/favicon.png" type="image/png" />
   <script type="application/ld+json">${JSON.stringify(schema(lang))}</script>
   <script type="module" src="/src/scripts/main.js"></script>
 </head>`;
@@ -192,7 +192,7 @@ function header(lang, activeKey) {
 <header class="site-header" data-site-header>
   <div class="container site-header__inner">
     <a class="brand" href="${attr(route(lang, "home"))}" aria-label="${attr(site.name)}">
-      <img src="/media/logo-symbol.svg" alt="" width="48" height="48" />
+      <img src="/media/logo-pernet-paysages-mark.png" alt="" width="48" height="48" />
       <span>${escapeHtml(site.name)}</span>
     </a>
     <nav class="main-nav" aria-label="${lang === "fr" ? "Navigation principale" : "Main navigation"}">
@@ -237,7 +237,7 @@ function footer(lang) {
   return `<footer class="site-footer">
   <div class="container footer-grid">
     <div>
-      <img src="/media/logo-pernet-paysages.svg" alt="${attr(site.name)}" width="220" height="90" />
+      <img class="footer-logo" src="/media/logo-pernet-paysages-wordmark.png" alt="${attr(site.name)}" width="260" height="127" />
       <p>${escapeHtml(c.footerBaseline)}</p>
     </div>
     <div>
@@ -611,7 +611,7 @@ function rootIndex() {
   <title>Pernet Paysages</title>
   <meta name="description" content="Pernet Paysages, paysagiste à Morges et dans le canton de Vaud." />
   <link rel="canonical" href="${attr(site.baseUrl)}/" />
-  <link rel="icon" href="/media/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="/media/favicon.png" type="image/png" />
 </head>
 <body>
   <main>
