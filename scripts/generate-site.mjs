@@ -119,8 +119,8 @@ function pageHeading(lang, key, label, title, lead, imagePath, actions = "") {
 function schema(lang) {
   const description =
     lang === "fr"
-      ? "Paysagiste à Morges pour la création, la rénovation et l'entretien de jardins dans le canton de Vaud."
-      : "Landscaper in Morges for garden creation, renovation and maintenance across the canton of Vaud.";
+      ? "Paysagiste pour la création, la rénovation et l'entretien de jardins dans le canton de Vaud et sur l'arc lémanique."
+      : "Landscaper for garden creation, renovation and maintenance across the canton of Vaud and the Lake Geneva region.";
 
   return {
     "@context": "https://schema.org",
@@ -135,15 +135,13 @@ function schema(lang) {
     priceRange: "Sur devis",
     address: {
       "@type": "PostalAddress",
-      addressLocality: "Morges",
       addressRegion: "Vaud",
       addressCountry: "CH"
     },
     areaServed: [
-      "Morges",
       "Canton de Vaud",
-      "Lausanne",
-      "Arc lémanique"
+      "Arc lémanique",
+      "Lake Geneva region"
     ],
     openingHoursSpecification: {
       "@type": "OpeningHoursSpecification",
@@ -305,7 +303,7 @@ function homePage(lang) {
   const previewProjects = projects.slice(0, 3);
 
   const proof = h.proof
-    .map((item) => `<li><span>${escapeHtml(item)}</span></li>`)
+    .map((item) => `<li>${escapeHtml(item)}</li>`)
     .join("");
 
   const serviceCards = featuredServices
@@ -348,12 +346,10 @@ function homePage(lang) {
       ${button(route(lang, "contact"), c.quoteCta, "primary")}
       ${button(route(lang, "services"), c.secondaryCta, "light")}
     </div>
-  </div>
-</section>
-<section class="trust-strip" aria-label="${lang === "fr" ? "Points de confiance" : "Trust points"}">
-  <div class="container trust-strip__inner">
-    <p>${escapeHtml(h.trust)}</p>
-    <ul>${proof}</ul>
+    <div class="hero-proof" aria-label="${lang === "fr" ? "Points de confiance" : "Trust points"}">
+      <p class="hero-proof__intro">${escapeHtml(h.trust)}</p>
+      <ul>${proof}</ul>
+    </div>
   </div>
 </section>
 <section class="section section--intro">

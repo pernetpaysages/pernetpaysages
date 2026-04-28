@@ -65,9 +65,9 @@ export const site = {
 export const pages = {
   fr: {
     home: {
-      title: "Pernet Paysages | Paysagiste à Morges, Vaud et arc lémanique",
+      title: "Pernet Paysages | Paysagiste Vaud et arc lémanique",
       description:
-        "Création, rénovation et entretien de jardins à Morges, dans le canton de Vaud et l'arc lémanique. Un paysagiste indépendant pour des extérieurs soignés, durables et faciles à vivre."
+        "Création, rénovation et entretien de jardins dans le canton de Vaud et sur l'arc lémanique. Pernet Paysages réalise des extérieurs soignés, durables et faciles à vivre."
     },
     services: {
       title: "Prestations de paysagisme à Morges et dans le canton de Vaud",
@@ -102,9 +102,9 @@ export const pages = {
   },
   en: {
     home: {
-      title: "Pernet Paysages | Landscaper in Morges, Vaud and Lake Geneva region",
+      title: "Pernet Paysages | Landscaper in Vaud and the Lake Geneva region",
       description:
-        "Garden creation, renovation and maintenance in Morges, across the canton of Vaud and the Lake Geneva region. Independent landscaping with careful, durable execution."
+        "Garden creation, renovation and maintenance across the canton of Vaud and the Lake Geneva region. Pernet Paysages creates careful, durable outdoor spaces."
     },
     services: {
       title: "Landscaping services in Morges and the canton of Vaud",
@@ -157,16 +157,16 @@ export const copy = {
     footerNav: "Liens utiles",
     contactTitle: "Contact",
     home: {
-      eyebrow: "Pernet Paysages · Morges · Vaud",
+      eyebrow: "Pernet Paysages · Vaud · Arc lémanique",
       h1: "Des jardins pensés pour le lieu, les usages et le temps.",
       lead:
-        "Création, rénovation et entretien de jardins à Morges et dans le canton de Vaud. Un contact direct, des choix clairs et un chantier suivi de près.",
+        "Création, rénovation et entretien de jardins dans le canton de Vaud et sur l'arc lémanique. Des choix clairs, un suivi précis et un extérieur facile à vivre.",
       trust:
-        "Luca PERNET accompagne villas, PPE, architectes, entreprises et propriétaires privés, du suivi régulier à la création complète.",
+        "Pernet Paysages accompagne villas, PPE, architectes, entreprises et propriétaires privés, du suivi régulier à la création complète.",
       proof: [
-        "Indépendant depuis 2017",
-        "Contact direct avec le paysagiste",
-        "Intervention à Morges, Vaud et arc lémanique"
+        "Entreprise indépendante depuis 2017",
+        "Création, rénovation et entretien régulier",
+        "Vaud - Arc lémanique"
       ],
       servicesTitle: "Créer, rénover et entretenir sans perdre le fil",
       servicesLead:
@@ -177,7 +177,7 @@ export const copy = {
       methodTitle: "Une méthode simple, lisible et adaptée au terrain",
       aboutTitle: "Une entreprise indépendante, proche du chantier",
       aboutText:
-        "Depuis 2017, Luca PERNET travaille à taille humaine: lire le lieu, proposer une intervention réaliste et suivre les détails jusqu'aux finitions.",
+        "Depuis 2017, Pernet Paysages travaille à taille humaine: lire le lieu, proposer une intervention réaliste et suivre les détails jusqu'aux finitions.",
       finalCtaTitle: "Vous avez un jardin à créer, reprendre ou entretenir ?",
       finalCtaText:
         "Décrivez votre projet en quelques lignes. Une visite sur place permet ensuite de préciser les besoins, les priorités et le budget."
@@ -296,16 +296,16 @@ export const copy = {
     footerNav: "Useful links",
     contactTitle: "Contact",
     home: {
-      eyebrow: "Pernet Paysages · Morges · Vaud",
+      eyebrow: "Pernet Paysages · Vaud · Lake Geneva region",
       h1: "Gardens shaped around the site, the way you live and long-term care.",
       lead:
-        "Garden creation, renovation and maintenance in Morges and across Vaud. Direct contact, clear choices and closely followed work.",
+        "Garden creation, renovation and maintenance across the canton of Vaud and the Lake Geneva region. Clear choices, careful follow-up and outdoor spaces made to last.",
       trust:
-        "Luca PERNET works with villa owners, property co-owners, architects, companies and private clients, from regular care to complete garden creation.",
+        "Pernet Paysages works with villa owners, property co-owners, architects, companies and private clients, from regular care to complete garden creation.",
       proof: [
-        "Independent since 2017",
-        "Direct contact with the landscaper",
-        "Morges, Vaud and the Lake Geneva region"
+        "Independent business since 2017",
+        "Creation, renovation and regular care",
+        "Vaud - Lake Geneva region"
       ],
       servicesTitle: "Create, renovate and maintain with one clear thread",
       servicesLead:
@@ -316,7 +316,7 @@ export const copy = {
       methodTitle: "A simple method, adapted to the ground",
       aboutTitle: "An independent business, close to the work on site",
       aboutText:
-        "Since 2017, Luca PERNET has worked at a human scale: understand the site, propose a realistic intervention and follow details through to completion.",
+        "Since 2017, Pernet Paysages has worked at a human scale: understand the site, propose a realistic intervention and follow details through to completion.",
       finalCtaTitle: "Do you have a garden to create, restore or maintain?",
       finalCtaText:
         "Describe the project in a few lines. A site visit then helps clarify needs, priorities and budget."
