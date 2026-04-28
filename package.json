@@ -4,8 +4,10 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
+    "generate": "node scripts/generate-site.mjs",
+    "check": "node scripts/check-site.mjs",
+    "dev": "npm run generate && vite",
+    "build": "npm run generate && vite build && npm run check",
     "preview": "vite preview"
   },
   "devDependencies": {

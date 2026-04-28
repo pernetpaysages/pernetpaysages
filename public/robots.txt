@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://pernet-paysages.ch/sitemap.xml

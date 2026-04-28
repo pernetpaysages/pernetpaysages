@@ -1,56 +1,100 @@
-# Pernet Paysages - Site vitrine Vite (FR/EN)
+# Pernet Paysages
 
-## Installation
-- `npm install`
-- `npm run dev`
-- `npm run build`
-- `npm run preview`
+Site vitrine statique FR/EN pour Pernet Paysages, généré avec Vite et déployable sur GitHub Pages.
 
-## Structure
-- Pages FR: `/fr/`, `/fr/prestations/`, `/fr/realisations/`, `/fr/a-propos/`, `/fr/contact/`, `/fr/confidentialite/`
-- Pages EN: `/en/`, `/en/services/`, `/en/projects/`, `/en/about/`, `/en/contact/`, `/en/privacy/`
+## Stack
 
-## Media
-Placez les images dans `public/media/` (accessibles via `/media/...`).
-- Logo principal: `public/media/logo-pernet-paysages.png`
-- Symbole/logo simplifie: `public/media/logo-symbol.svg`
-- Favicon: `public/media/favicon.svg`
-- Hero: `public/media/hero.jpg`
-- About: `public/media/about.jpg`
-- Realisations: `public/media/realisations/projet-XX/`
+- Vite 5
+- HTML statique généré depuis `src/data/site.js`
+- CSS vanilla dans `src/styles/main.css`
+- JavaScript minimal dans `src/scripts/main.js`
+- Aucun backend, aucune base de données
 
-Note: le logo PNG 3170x3170 doit etre vectorise ensuite en SVG propre pour un rendu optimal.
+## Commandes
 
-## Formulaire Web3Forms
-Le formulaire est sur:
-- `fr/contact/index.html`
-- `en/contact/index.html`
+```bash
+npm install
+npm run generate
+npm run check
+npm run dev
+npm run build
+npm run preview
+```
 
-Remplacez:
-- `WEB3FORMS_ACCESS_KEY`
+`npm run build` génère les pages, lance le build Vite, puis vérifie les liens internes, placeholders visibles, sitemap et robots.
 
-## Google Analytics (optionnel)
-Dans `src/scripts/main.js`:
-- `const GA_MEASUREMENT_ID = "G-XXXXXXXXXX"`
+## Pages
 
-Si la valeur reste `G-XXXXXXXXXX`, GA n'est pas charge.
+FR:
 
-## Textes FR/EN
-- Donnees projets: `src/data/content.js`
-- Pages statiques: fichiers `fr/...` et `en/...`
+- `/fr/`
+- `/fr/prestations/`
+- `/fr/realisations/`
+- `/fr/a-propos/`
+- `/fr/contact/`
+- `/fr/confidentialite/`
+- `/fr/mentions-legales/`
 
-## Ajouter une realisation
-1. Ajouter les images dans `public/media/realisations/projet-0X/`
-2. Ajouter/modifier l'entree dans `src/data/content.js`
-3. La page `/fr/realisations/` et `/en/projects/` se met a jour automatiquement
+EN:
 
-## GitHub Pages
-- Workflow: `.github/workflows/deploy.yml`
-- Config Vite: `vite.config.js`
+- `/en/`
+- `/en/services/`
+- `/en/projects/`
+- `/en/about/`
+- `/en/contact/`
+- `/en/privacy/`
+- `/en/legal/`
 
-`vite.config.js` utilise `BASE_PATH`:
-- Domaine personnalise: `BASE_PATH=/`
-- GitHub Pages projet: `BASE_PATH=/NOM_DU_REPO/`
+## Contenu
 
-Exemple build local avec base projet:
-- PowerShell: `$env:BASE_PATH='/NOM_DU_REPO/'; npm run build`
+Les informations importantes sont centralisées dans `src/data/site.js`:
+
+- coordonnées
+- routes FR/EN
+- SEO par page
+- textes principaux
+- services
+- réalisations
+- FAQ
+- contenus confidentialité et mentions légales
+- valeurs à confirmer, dont l'année du CFC
+
+Après modification de ce fichier, lancer:
+
+```bash
+npm run generate
+```
+
+## Images
+
+Les originaux restent dans `public/media/`.
+
+Les pages utilisent les dérivés optimisés dans `public/media/optimized/`, générés à partir des vraies images du repo avec auto-orientation, compression et redimensionnement.
+
+Important: `public/media/about.jpg` contient un filigrane indiquant une image générée par IA. Le site ne l'utilise pas comme réalisation.
+
+## Formulaire
+
+Le formulaire utilise Web3Forms:
+
+- action: `https://api.web3forms.com/submit`
+- méthode: `POST`
+- clé centralisée dans `src/data/site.js`
+- honeypot anti-spam
+- validation côté navigateur avec fallback sans JavaScript
+
+Le site ne propose pas WhatsApp tant que l'usage du numéro n'est pas confirmé.
+
+## SEO et GitHub Pages
+
+- Domaine custom: `public/CNAME`
+- Sitemap: `public/sitemap.xml`
+- Robots: `public/robots.txt`
+- Déploiement: `.github/workflows/deploy.yml`
+- Vite base par défaut: `/`, adapté au domaine `https://pernet-paysages.ch`
+
+Pour un build de test avec un autre base path:
+
+```powershell
+$env:BASE_PATH='/pernetpaysages/'; npm run build
+```

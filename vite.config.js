@@ -22,12 +22,14 @@ export default defineConfig({
         frAbout: resolve(__dirname, "fr/a-propos/index.html"),
         frContact: resolve(__dirname, "fr/contact/index.html"),
         frPrivacy: resolve(__dirname, "fr/confidentialite/index.html"),
+        frLegal: resolve(__dirname, "fr/mentions-legales/index.html"),
         enHome: resolve(__dirname, "en/index.html"),
         enServices: resolve(__dirname, "en/services/index.html"),
         enProjects: resolve(__dirname, "en/projects/index.html"),
         enAbout: resolve(__dirname, "en/about/index.html"),
         enContact: resolve(__dirname, "en/contact/index.html"),
-        enPrivacy: resolve(__dirname, "en/privacy/index.html")
+        enPrivacy: resolve(__dirname, "en/privacy/index.html"),
+        enLegal: resolve(__dirname, "en/legal/index.html")
       }
     }
   }
