@@ -29,8 +29,7 @@
 <header class="site-header" data-site-header>
   <div class="container site-header__inner">
     <a class="brand" href="/fr/" aria-label="Pernet Paysages">
-      <img src="/media/logo-pernet-paysages-mark.png" alt="" width="48" height="48" />
-      <span>Pernet Paysages</span>
+      <img src="/media/logo-pernet-paysages-wordmark.png" alt="Pernet Paysages" width="214" height="104" />
     </a>
     <nav class="main-nav" aria-label="Navigation principale">
       <ul><li><a class="nav-link" href="/fr/">Accueil</a></li><li><a class="nav-link" href="/fr/prestations/">Prestations</a></li><li><a class="nav-link" href="/fr/realisations/">Réalisations</a></li><li><a class="nav-link" href="/fr/a-propos/">À propos</a></li><li><a class="nav-link" href="/fr/contact/" aria-current="page">Contact</a></li></ul>
@@ -62,10 +61,11 @@
       <div class="page-hero__copy">
         <p class="eyebrow">Contact</p>
         <h1 id="contact-title">Parlons de votre extérieur</h1>
-        <p class="lead">Création de jardin, rénovation, entretien régulier, terrasse ou intervention technique: laissez un message court avec le contexte du lieu. Pernet Paysages vous recontacte pour la suite.</p>
+        <p class="lead">Création, rénovation, entretien régulier ou terrasse: envoyez un message court. Luca PERNET vous répond pour cadrer la demande et, si utile, une visite.</p>
         <div class="hero-actions">
-          <a class="button button--primary" href="/fr/contact/"><span>Demander un devis</span></a>
-          <a class="button button--secondary" href="/fr/realisations/"><span>Voir les réalisations</span></a>
+          
+          <a class="button button--primary contact-hero" href="https://wa.me/41792437224?text=Bonjour%20Luca%2C%20je%20souhaite%20parler%20de%20mon%20jardin."><span>WhatsApp</span></a>
+          <a class="button button--secondary" href="tel:+41792437224"><span>Appeler 079 243 72 24</span></a>
         </div>
       </div>
       <div class="page-hero__media"><picture class="media-frame">
@@ -76,20 +76,6 @@
   </section>
 <section class="section">
   <div class="container contact-grid">
-    <div>
-      <div class="contact-actions">
-        <a class="button button--primary" href="tel:+41792437224"><span>Appeler 079 243 72 24</span></a>
-        <a class="button button--secondary" href="mailto:pernet.paysages@gmail.com"><span>Écrire</span></a>
-      </div>
-      <div class="contact-note">
-        <p><strong>Zone d’intervention</strong></p>
-        <p>Morges, canton de Vaud et arc lémanique</p>
-      </div>
-      <div class="prepare-box">
-        <h2>Avant de nous écrire, vous pouvez préparer</h2>
-        <ul><li>La commune</li><li>Le type de projet</li><li>Quelques photos du jardin</li><li>Le délai souhaité</li><li>Entretien ponctuel ou suivi régulier</li></ul>
-      </div>
-    </div>
     <form class="form" data-contact-form data-lang="fr" method="POST" action="https://api.web3forms.com/submit">
     <input type="hidden" name="access_key" value="61c44701-b41b-4fb3-b132-681efbed17e4" />
     <input type="hidden" name="subject" value="Nouvelle demande de devis - Pernet Paysages" />
@@ -99,28 +85,9 @@
       <label for="name">Nom *</label>
       <input id="name" name="name" autocomplete="name" required />
     </div>
-    <div class="form-row">
-      <div class="field">
-        <label for="email">Email</label>
-        <input id="email" name="email" type="email" autocomplete="email" />
-      </div>
-      <div class="field">
-        <label for="phone">Téléphone</label>
-        <input id="phone" name="phone" type="tel" autocomplete="tel" />
-      </div>
-    </div>
-    <div class="form-row">
-      <div class="field">
-        <label for="commune">Commune</label>
-        <input id="commune" name="commune" autocomplete="address-level2" />
-      </div>
-      <div class="field">
-        <label for="project_type">Type de projet</label>
-        <select id="project_type" name="project_type">
-          <option value="">Sélectionner</option>
-          <option value="Création paysagère">Création paysagère</option><option value="Rénovation">Rénovation</option><option value="Entretien régulier">Entretien régulier</option><option value="Terrasse ou revêtement">Terrasse ou revêtement</option><option value="Plantations ou gazon">Plantations ou gazon</option><option value="Élagage ou abattage">Élagage ou abattage</option><option value="Autre demande">Autre demande</option>
-        </select>
-      </div>
+    <div class="field">
+      <label for="contact">Téléphone ou email *</label>
+      <input id="contact" name="contact" autocomplete="on" required />
     </div>
     <div class="field">
       <label for="message">Message *</label>
@@ -131,6 +98,21 @@
     <p class="form-feedback" data-form-feedback aria-live="polite"></p>
     <noscript><p class="form-note">JavaScript est désactivé. Le formulaire sera envoyé normalement via Web3Forms.</p></noscript>
   </form>
+    <div class="contact-side">
+      <div class="contact-actions">
+        <a class="button button--primary contact-hero" href="https://wa.me/41792437224?text=Bonjour%20Luca%2C%20je%20souhaite%20parler%20de%20mon%20jardin."><span>WhatsApp</span></a>
+        <a class="button button--secondary" href="tel:+41792437224"><span>Appeler 079 243 72 24</span></a>
+        <a class="button button--secondary" href="mailto:pernet.paysages@gmail.com"><span>Écrire</span></a>
+      </div>
+      <div class="contact-note">
+        <p><strong>Zone d’intervention</strong></p>
+        <p>Morges, canton de Vaud et arc lémanique</p>
+      </div>
+      <div class="prepare-box">
+        <h2>Pour aller vite</h2>
+        <ul><li>Votre commune</li><li>Le besoin principal</li><li>Le délai souhaité si vous en avez un</li></ul>
+      </div>
+    </div>
   </div>
 </section>
 

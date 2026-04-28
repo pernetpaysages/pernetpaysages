@@ -1,5 +1,6 @@
 export const site = {
   name: "Pernet Paysages",
+  ownerName: "Luca PERNET",
   baseUrl: "https://pernet-paysages.ch",
   foundedYear: 2017,
   cfcYear: null,
@@ -7,6 +8,7 @@ export const site = {
   cfcYearNote: "TODO: confirmer l'année exacte du CFC avant de l'afficher publiquement.",
   phoneDisplay: "079 243 72 24",
   phoneHref: "+41792437224",
+  whatsappHref: "https://wa.me/41792437224",
   email: "pernet.paysages@gmail.com",
   serviceArea: {
     fr: "Morges, canton de Vaud et arc lémanique",
@@ -18,7 +20,7 @@ export const site = {
     hero: "/media/hero.jpg",
     about: "/media/realisations/projet-05/cover.jpg",
     services: "/media/realisations/projet-02/cover.jpg",
-    projects: "/media/realisations/projet-01/cover.jpg",
+    projects: "/media/hero.jpg",
     contact: "/media/realisations/projet-03/cover.jpg",
     og: "/media/optimized/og-pernet-paysages.jpg"
   },
@@ -146,6 +148,7 @@ export const copy = {
     secondaryCta: "Voir les prestations",
     quoteCta: "Demander un devis",
     phoneCta: "Appeler",
+    whatsappCta: "WhatsApp",
     emailCta: "Écrire",
     menu: "Menu",
     close: "Fermer",
@@ -157,9 +160,9 @@ export const copy = {
       eyebrow: "Pernet Paysages · Morges · Vaud",
       h1: "Des jardins pensés pour le lieu, les usages et le temps.",
       lead:
-        "Création, rénovation et entretien de jardins à Morges et dans le canton de Vaud, avec une approche soignée, durable et attentive au détail.",
+        "Création, rénovation et entretien de jardins à Morges et dans le canton de Vaud. Un contact direct, des choix clairs et un chantier suivi de près.",
       trust:
-        "Pernet Paysages accompagne propriétaires de villas, PPE, architectes, entreprises et propriétaires privés dans des projets de toutes tailles, du suivi régulier à la création complète.",
+        "Luca PERNET accompagne villas, PPE, architectes, entreprises et propriétaires privés, du suivi régulier à la création complète.",
       proof: [
         "Indépendant depuis 2017",
         "Contact direct avec le paysagiste",
@@ -167,14 +170,14 @@ export const copy = {
       ],
       servicesTitle: "Créer, rénover et entretenir sans perdre le fil",
       servicesLead:
-        "Le site doit être beau le jour de la livraison, mais aussi rester juste dans le temps. Les choix de matériaux, de végétaux et d'entretien sont pensés ensemble.",
+        "Un extérieur réussi doit tenir après la livraison. Les matériaux, les plantations et l'entretien sont pensés ensemble, pour un résultat beau et réaliste à vivre.",
       projectsTitle: "Une sélection d’extérieurs et de détails de chantier",
       projectsLead:
-        "Les images ci-dessous proviennent des dossiers disponibles dans le site. Les lieux exacts et les clients ne sont pas inventés.",
+        "Des jardins, terrasses et détails de chantier issus des images disponibles. Les légendes restent sobres lorsque le lieu exact n'est pas confirmé.",
       methodTitle: "Une méthode simple, lisible et adaptée au terrain",
       aboutTitle: "Une entreprise indépendante, proche du chantier",
       aboutText:
-        "Depuis 2017, Pernet Paysages travaille à taille humaine avec une relation directe. L'objectif: comprendre le lieu, proposer une intervention réaliste et suivre les détails jusqu'aux finitions.",
+        "Depuis 2017, Luca PERNET travaille à taille humaine: lire le lieu, proposer une intervention réaliste et suivre les détails jusqu'aux finitions.",
       finalCtaTitle: "Vous avez un jardin à créer, reprendre ou entretenir ?",
       finalCtaText:
         "Décrivez votre projet en quelques lignes. Une visite sur place permet ensuite de préciser les besoins, les priorités et le budget."
@@ -197,20 +200,20 @@ export const copy = {
       eyebrow: "Réalisations",
       h1: "Des extérieurs lisibles, des finitions propres",
       lead:
-        "La galerie rassemble des images issues des dossiers disponibles: jardins, terrasses, plantations, surfaces minérales et entretien. Les captions restent volontairement sobres lorsqu'un lieu précis n'est pas confirmé.",
+        "La galerie rassemble des images disponibles de jardins, terrasses, plantations, surfaces minérales et entretien. Les lieux exacts ne sont pas inventés.",
       ctaTitle: "Vous avez un projet similaire ?",
       ctaText:
-        "Envoyez quelques photos et la commune du chantier. Cela suffit souvent pour préparer un premier échange utile."
+        "Écrivez en quelques lignes ce que vous souhaitez faire. Luca PERNET vous recontacte pour cadrer la suite."
     },
     aboutPage: {
       eyebrow: "À propos",
       h1: "Un savoir-faire paysager à taille humaine",
       lead:
-        "Pernet Paysages est une entreprise indépendante fondée en 2017. Le travail repose sur une formation CFC de paysagiste, une pratique concrète du terrain et une attention constante portée aux finitions.",
+        "Pernet Paysages est l'entreprise de Luca PERNET, paysagiste indépendant depuis 2017. Le travail repose sur une formation CFC de paysagiste, une pratique concrète du terrain et une attention constante portée aux finitions.",
       sections: [
         [
           "Parcours",
-          "L'entreprise s'est construite autour d'une idée simple: rester proche du chantier et du client. La formation CFC de paysagiste apporte une base technique solide, complétée par l'expérience de terrain."
+          "L'entreprise s'est construite autour d'une idée simple: rester proche du chantier et du client. Luca PERNET garde un lien direct avec la demande, le terrain et les finitions."
         ],
         [
           "Manière de travailler",
@@ -230,15 +233,12 @@ export const copy = {
       eyebrow: "Contact",
       h1: "Parlons de votre extérieur",
       lead:
-        "Création de jardin, rénovation, entretien régulier, terrasse ou intervention technique: laissez un message court avec le contexte du lieu. Pernet Paysages vous recontacte pour la suite.",
-      prepareTitle: "Avant de nous écrire, vous pouvez préparer",
-      prepare: ["La commune", "Le type de projet", "Quelques photos du jardin", "Le délai souhaité", "Entretien ponctuel ou suivi régulier"],
+        "Création, rénovation, entretien régulier ou terrasse: envoyez un message court. Luca PERNET vous répond pour cadrer la demande et, si utile, une visite.",
+      prepareTitle: "Pour aller vite",
+      prepare: ["Votre commune", "Le besoin principal", "Le délai souhaité si vous en avez un"],
       form: {
         name: "Nom",
-        email: "Email",
-        phone: "Téléphone",
-        commune: "Commune",
-        projectType: "Type de projet",
+        contact: "Téléphone ou email",
         message: "Message",
         consent:
           "En envoyant ce formulaire, vous acceptez que vos données soient utilisées uniquement pour répondre à votre demande.",
@@ -247,13 +247,13 @@ export const copy = {
         success: "Merci, votre message a bien été envoyé.",
         error: "Une erreur est survenue. Vous pouvez aussi nous contacter par email ou téléphone.",
         validation:
-          "Merci de renseigner votre nom, votre message et au moins un moyen de contact: email ou téléphone."
+          "Merci de renseigner votre nom, un téléphone ou email, et votre message."
       }
     },
     privacy: {
       h1: "Politique de confidentialité",
       body: [
-        ["Données collectées", "Le formulaire de contact collecte uniquement les informations que vous saisissez: nom, email, téléphone, commune, type de projet et message."],
+        ["Données collectées", "Le formulaire de contact collecte uniquement les informations que vous saisissez: nom, téléphone ou email, et message."],
         ["Finalité", "Ces données servent à comprendre votre demande, vous recontacter et préparer un éventuel devis ou rendez-vous."],
         ["Conservation", "Les messages sont conservés pendant une durée raisonnable liée au suivi de la demande, puis supprimés lorsqu'ils ne sont plus utiles."],
         ["Prestataire formulaire", "L'envoi du formulaire est traité par Web3Forms. Si vous préférez éviter le formulaire, vous pouvez écrire directement à l'adresse email indiquée sur le site."],
@@ -264,7 +264,7 @@ export const copy = {
     legal: {
       h1: "Mentions légales",
       body: [
-        ["Responsable du site", "Pernet Paysages, entreprise de paysagisme active à Morges, dans le canton de Vaud et sur l'arc lémanique."],
+        ["Responsable du site", "Luca PERNET, Pernet Paysages, entreprise de paysagisme active à Morges, dans le canton de Vaud et sur l'arc lémanique."],
         ["Contact", "Téléphone: 079 243 72 24. Email: pernet.paysages@gmail.com."],
         ["Contenus", "Les textes, images et éléments graphiques du site sont destinés à présenter l'activité de Pernet Paysages. Toute reprise doit être autorisée au préalable."],
         ["Informations administratives", "Pour toute demande administrative ou correction concernant les informations publiées, vous pouvez contacter Pernet Paysages par email."]
@@ -285,6 +285,7 @@ export const copy = {
     secondaryCta: "View services",
     quoteCta: "Request a quote",
     phoneCta: "Call",
+    whatsappCta: "WhatsApp",
     emailCta: "Email",
     menu: "Menu",
     close: "Close",
@@ -296,9 +297,9 @@ export const copy = {
       eyebrow: "Pernet Paysages · Morges · Vaud",
       h1: "Gardens shaped around the site, the way you live and long-term care.",
       lead:
-        "Garden creation, renovation and maintenance in Morges and across the canton of Vaud, with careful, durable and detail-led execution.",
+        "Garden creation, renovation and maintenance in Morges and across Vaud. Direct contact, clear choices and closely followed work.",
       trust:
-        "Pernet Paysages works with villa owners, property co-owners, architects, companies and private clients on projects of every scale, from regular care to complete garden creation.",
+        "Luca PERNET works with villa owners, property co-owners, architects, companies and private clients, from regular care to complete garden creation.",
       proof: [
         "Independent since 2017",
         "Direct contact with the landscaper",
@@ -306,14 +307,14 @@ export const copy = {
       ],
       servicesTitle: "Create, renovate and maintain with one clear thread",
       servicesLead:
-        "A garden should look right on delivery and remain manageable over time. Materials, planting and maintenance are considered together.",
+        "A good outdoor space must still make sense after delivery. Materials, planting and maintenance are considered together, for a result that stays manageable.",
       projectsTitle: "Selected outdoor spaces and site details",
       projectsLead:
-        "The images below come from the available site files. Exact locations and clients are not invented.",
+        "Gardens, terraces and site details from available project images. Exact places are not invented when they are not confirmed.",
       methodTitle: "A simple method, adapted to the ground",
       aboutTitle: "An independent business, close to the work on site",
       aboutText:
-        "Since 2017, Pernet Paysages has worked at a human scale with direct client contact. The aim is to understand the place, propose a realistic intervention and follow the details through to completion.",
+        "Since 2017, Luca PERNET has worked at a human scale: understand the site, propose a realistic intervention and follow details through to completion.",
       finalCtaTitle: "Do you have a garden to create, restore or maintain?",
       finalCtaText:
         "Describe the project in a few lines. A site visit then helps clarify needs, priorities and budget."
@@ -336,20 +337,20 @@ export const copy = {
       eyebrow: "Projects",
       h1: "Readable outdoor spaces, carefully finished",
       lead:
-        "The gallery brings together available project images: gardens, terraces, planting, mineral surfaces and maintenance. Captions stay deliberately sober where an exact location is not confirmed.",
+        "The gallery brings together available images of gardens, terraces, planting, mineral surfaces and maintenance. Exact locations are not invented.",
       ctaTitle: "Planning a similar project?",
       ctaText:
-        "Send a few photos and the municipality. That is often enough to prepare a useful first conversation."
+        "Send a short message about what you would like to do. Luca PERNET will get back to you to frame the next step."
     },
     aboutPage: {
       eyebrow: "About",
       h1: "Landscape expertise at a human scale",
       lead:
-        "Pernet Paysages is an independent business founded in 2017. The work is based on CFC landscaping training, practical field experience and constant attention to finishing details.",
+        "Pernet Paysages is Luca PERNET's independent landscaping business, founded in 2017. The work is based on CFC landscaping training, practical field experience and constant attention to finishing details.",
       sections: [
         [
           "Background",
-          "The business has grown around a simple idea: stay close to the site and the client. CFC landscaping training provides a solid technical base, strengthened by field experience."
+          "The business has grown around a simple idea: stay close to the site and the client. Luca PERNET keeps direct contact with the request, the ground and the finishing details."
         ],
         [
           "How the work is approached",
@@ -369,15 +370,12 @@ export const copy = {
       eyebrow: "Contact",
       h1: "Let us discuss your outdoor space",
       lead:
-        "Garden creation, renovation, regular maintenance, a terrace or a technical intervention: send a short message with the site context. Pernet Paysages will get back to you.",
-      prepareTitle: "Before writing, you can prepare",
-      prepare: ["Municipality", "Project type", "A few photos of the garden", "Desired timing", "One-off work or regular maintenance"],
+        "Garden creation, renovation, regular maintenance or a terrace: send a short message. Luca PERNET will get back to you to frame the request and, if useful, a visit.",
+      prepareTitle: "To move quickly",
+      prepare: ["Your municipality", "The main need", "Desired timing if you have one"],
       form: {
         name: "Name",
-        email: "Email",
-        phone: "Phone",
-        commune: "Municipality",
-        projectType: "Project type",
+        contact: "Phone or email",
         message: "Message",
         consent:
           "By submitting this form, you agree that your data is used only to respond to your request.",
@@ -386,13 +384,13 @@ export const copy = {
         success: "Thank you, your message has been sent.",
         error: "Something went wrong. You can also contact us by email or phone.",
         validation:
-          "Please provide your name, message and at least one contact method: email or phone."
+          "Please provide your name, phone or email, and message."
       }
     },
     privacy: {
       h1: "Privacy policy",
       body: [
-        ["Data collected", "The contact form collects only the information you enter: name, email, phone, municipality, project type and message."],
+        ["Data collected", "The contact form collects only the information you enter: name, phone or email, and message."],
         ["Purpose", "This data is used to understand your request, contact you and prepare a possible quote or site visit."],
         ["Retention", "Messages are kept for a reasonable period related to request follow-up, then deleted when no longer useful."],
         ["Form provider", "Form submission is processed by Web3Forms. If you prefer not to use the form, you can email Pernet Paysages directly."],
@@ -403,7 +401,7 @@ export const copy = {
     legal: {
       h1: "Legal notice",
       body: [
-        ["Website owner", "Pernet Paysages, landscaping business active in Morges, the canton of Vaud and the Lake Geneva region."],
+        ["Website owner", "Luca PERNET, Pernet Paysages, landscaping business active in Morges, the canton of Vaud and the Lake Geneva region."],
         ["Contact", "Phone: 079 243 72 24. Email: pernet.paysages@gmail.com."],
         ["Content", "Texts, images and graphic elements on this site are intended to present the work of Pernet Paysages. Any reuse requires prior authorisation."],
         ["Administrative information", "For any administrative request or correction regarding the published information, contact Pernet Paysages by email."]
@@ -643,7 +641,7 @@ export const faqs = {
     ["Travaillez-vous avec les PPE et architectes ?", "Oui. Les demandes de PPE, immeubles, architectes, entreprises et propriétaires privés peuvent être étudiées."],
     ["Peut-on demander une visite sur place ?", "Oui, c'est souvent la meilleure manière de comprendre le terrain, les accès, les priorités et le budget."],
     ["Faites-vous les petits projets comme les grands ?", "Oui. Le ton est haut de gamme, mais les petits projets utiles et bien cadrés sont les bienvenus."],
-    ["Comment demander un devis ?", "Utilisez le formulaire, appelez ou envoyez un email avec la commune, quelques photos et une courte description du besoin."]
+    ["Comment demander un devis ?", "Utilisez le formulaire court, WhatsApp, le téléphone ou l'email avec une description simple du besoin."]
   ],
   en: [
     ["Do you work across the canton of Vaud?", "Yes, depending on the nature of the project. The main area covers Morges, Vaud and the Lake Geneva region."],
@@ -651,7 +649,7 @@ export const faqs = {
     ["Do you work with co-owned properties and architects?", "Yes. Requests from property co-owners, buildings, architects, companies and private homeowners can be reviewed."],
     ["Can we request a site visit?", "Yes. It is often the best way to understand the terrain, access, priorities and budget."],
     ["Do you accept small projects as well as large ones?", "Yes. The tone is premium, but useful, well-defined small projects are welcome."],
-    ["How do I request a quote?", "Use the form, call or send an email with the municipality, a few photos and a short description of what you need."]
+    ["How do I request a quote?", "Use the short form, WhatsApp, phone or email with a simple description of what you need."]
   ]
 };
 

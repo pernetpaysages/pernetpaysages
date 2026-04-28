@@ -29,8 +29,7 @@
 <header class="site-header" data-site-header>
   <div class="container site-header__inner">
     <a class="brand" href="/en/" aria-label="Pernet Paysages">
-      <img src="/media/logo-pernet-paysages-mark.png" alt="" width="48" height="48" />
-      <span>Pernet Paysages</span>
+      <img src="/media/logo-pernet-paysages-wordmark.png" alt="Pernet Paysages" width="214" height="104" />
     </a>
     <nav class="main-nav" aria-label="Main navigation">
       <ul><li><a class="nav-link" href="/en/">Home</a></li><li><a class="nav-link" href="/en/services/">Services</a></li><li><a class="nav-link" href="/en/projects/">Projects</a></li><li><a class="nav-link" href="/en/about/">About</a></li><li><a class="nav-link" href="/en/contact/" aria-current="page">Contact</a></li></ul>
@@ -62,10 +61,11 @@
       <div class="page-hero__copy">
         <p class="eyebrow">Contact</p>
         <h1 id="contact-title">Let us discuss your outdoor space</h1>
-        <p class="lead">Garden creation, renovation, regular maintenance, a terrace or a technical intervention: send a short message with the site context. Pernet Paysages will get back to you.</p>
+        <p class="lead">Garden creation, renovation, regular maintenance or a terrace: send a short message. Luca PERNET will get back to you to frame the request and, if useful, a visit.</p>
         <div class="hero-actions">
-          <a class="button button--primary" href="/en/contact/"><span>Request a quote</span></a>
-          <a class="button button--secondary" href="/en/projects/"><span>View projects</span></a>
+          
+          <a class="button button--primary contact-hero" href="https://wa.me/41792437224?text=Hello%20Luca%2C%20I%20would%20like%20to%20discuss%20a%20landscaping%20project."><span>WhatsApp</span></a>
+          <a class="button button--secondary" href="tel:+41792437224"><span>Call 079 243 72 24</span></a>
         </div>
       </div>
       <div class="page-hero__media"><picture class="media-frame">
@@ -76,20 +76,6 @@
   </section>
 <section class="section">
   <div class="container contact-grid">
-    <div>
-      <div class="contact-actions">
-        <a class="button button--primary" href="tel:+41792437224"><span>Call 079 243 72 24</span></a>
-        <a class="button button--secondary" href="mailto:pernet.paysages@gmail.com"><span>Email</span></a>
-      </div>
-      <div class="contact-note">
-        <p><strong>Service area</strong></p>
-        <p>Morges, the canton of Vaud and the Lake Geneva region</p>
-      </div>
-      <div class="prepare-box">
-        <h2>Before writing, you can prepare</h2>
-        <ul><li>Municipality</li><li>Project type</li><li>A few photos of the garden</li><li>Desired timing</li><li>One-off work or regular maintenance</li></ul>
-      </div>
-    </div>
     <form class="form" data-contact-form data-lang="en" method="POST" action="https://api.web3forms.com/submit">
     <input type="hidden" name="access_key" value="61c44701-b41b-4fb3-b132-681efbed17e4" />
     <input type="hidden" name="subject" value="New quote request - Pernet Paysages" />
@@ -99,28 +85,9 @@
       <label for="name">Name *</label>
       <input id="name" name="name" autocomplete="name" required />
     </div>
-    <div class="form-row">
-      <div class="field">
-        <label for="email">Email</label>
-        <input id="email" name="email" type="email" autocomplete="email" />
-      </div>
-      <div class="field">
-        <label for="phone">Phone</label>
-        <input id="phone" name="phone" type="tel" autocomplete="tel" />
-      </div>
-    </div>
-    <div class="form-row">
-      <div class="field">
-        <label for="commune">Municipality</label>
-        <input id="commune" name="commune" autocomplete="address-level2" />
-      </div>
-      <div class="field">
-        <label for="project_type">Project type</label>
-        <select id="project_type" name="project_type">
-          <option value="">Select</option>
-          <option value="Landscape creation">Landscape creation</option><option value="Renovation">Renovation</option><option value="Regular maintenance">Regular maintenance</option><option value="Terrace or surface">Terrace or surface</option><option value="Planting or lawn">Planting or lawn</option><option value="Tree pruning or felling">Tree pruning or felling</option><option value="Other request">Other request</option>
-        </select>
-      </div>
+    <div class="field">
+      <label for="contact">Phone or email *</label>
+      <input id="contact" name="contact" autocomplete="on" required />
     </div>
     <div class="field">
       <label for="message">Message *</label>
@@ -131,6 +98,21 @@
     <p class="form-feedback" data-form-feedback aria-live="polite"></p>
     <noscript><p class="form-note">JavaScript is disabled. The form will be submitted normally through Web3Forms.</p></noscript>
   </form>
+    <div class="contact-side">
+      <div class="contact-actions">
+        <a class="button button--primary contact-hero" href="https://wa.me/41792437224?text=Hello%20Luca%2C%20I%20would%20like%20to%20discuss%20a%20landscaping%20project."><span>WhatsApp</span></a>
+        <a class="button button--secondary" href="tel:+41792437224"><span>Call 079 243 72 24</span></a>
+        <a class="button button--secondary" href="mailto:pernet.paysages@gmail.com"><span>Email</span></a>
+      </div>
+      <div class="contact-note">
+        <p><strong>Service area</strong></p>
+        <p>Morges, the canton of Vaud and the Lake Geneva region</p>
+      </div>
+      <div class="prepare-box">
+        <h2>To move quickly</h2>
+        <ul><li>Your municipality</li><li>The main need</li><li>Desired timing if you have one</li></ul>
+      </div>
+    </div>
   </div>
 </section>
 

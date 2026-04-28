@@ -65,6 +65,16 @@ function button(href, label, variant = "primary") {
   return `<a class="button button--${attr(variant)}" href="${attr(href)}"><span>${escapeHtml(label)}</span></a>`;
 }
 
+function whatsappMessage(lang) {
+  return lang === "fr"
+    ? "Bonjour Luca, je souhaite parler de mon jardin."
+    : "Hello Luca, I would like to discuss a landscaping project.";
+}
+
+function whatsappLink(lang) {
+  return `${site.whatsappHref}?text=${encodeURIComponent(whatsappMessage(lang))}`;
+}
+
 function pageImageAlt(lang, key, fallback) {
   const labels = {
     fr: {
@@ -83,10 +93,13 @@ function pageImageAlt(lang, key, fallback) {
   return labels[lang][key] || fallback;
 }
 
-function pageHeading(lang, key, label, title, lead, imagePath) {
+function pageHeading(lang, key, label, title, lead, imagePath, actions = "") {
   const image = imagePath
     ? `<div class="page-hero__media">${imageMarkup(imagePath, pageImageAlt(lang, key, title), { className: "media-frame", loading: "eager" })}</div>`
     : "";
+  const heroActions = actions || `
+          ${button(route(lang, "contact"), copy[lang].quoteCta, "primary")}
+          ${button(route(lang, "projects"), lang === "fr" ? "Voir les réalisations" : "View projects", "secondary")}`;
   return `<section class="page-hero" aria-labelledby="${attr(key)}-title">
     <div class="container page-hero__grid">
       <div class="page-hero__copy">
@@ -94,8 +107,7 @@ function pageHeading(lang, key, label, title, lead, imagePath) {
         <h1 id="${attr(key)}-title">${escapeHtml(title)}</h1>
         <p class="lead">${escapeHtml(lead)}</p>
         <div class="hero-actions">
-          ${button(route(lang, "contact"), copy[lang].quoteCta, "primary")}
-          ${button(route(lang, "projects"), lang === "fr" ? "Voir les réalisations" : "View projects", "secondary")}
+          ${heroActions}
         </div>
       </div>
       ${image}
@@ -192,8 +204,7 @@ function header(lang, activeKey) {
 <header class="site-header" data-site-header>
   <div class="container site-header__inner">
     <a class="brand" href="${attr(route(lang, "home"))}" aria-label="${attr(site.name)}">
-      <img src="/media/logo-pernet-paysages-mark.png" alt="" width="48" height="48" />
-      <span>${escapeHtml(site.name)}</span>
+      <img src="/media/logo-pernet-paysages-wordmark.png" alt="${attr(site.name)}" width="214" height="104" />
     </a>
     <nav class="main-nav" aria-label="${lang === "fr" ? "Navigation principale" : "Main navigation"}">
       <ul>${nav}</ul>
@@ -503,11 +514,6 @@ ${ctaBlock(lang, lang === "fr" ? "Un échange direct pour votre jardin" : "A dir
 
 function contactForm(lang) {
   const c = copy[lang].contactPage.form;
-  const projectOptions =
-    lang === "fr"
-      ? ["Création paysagère", "Rénovation", "Entretien régulier", "Terrasse ou revêtement", "Plantations ou gazon", "Élagage ou abattage", "Autre demande"]
-      : ["Landscape creation", "Renovation", "Regular maintenance", "Terrace or surface", "Planting or lawn", "Tree pruning or felling", "Other request"];
-  const options = projectOptions.map((option) => `<option value="${attr(option)}">${escapeHtml(option)}</option>`).join("");
 
   return `<form class="form" data-contact-form data-lang="${attr(lang)}" method="POST" action="https://api.web3forms.com/submit">
     <input type="hidden" name="access_key" value="${attr(site.web3FormsAccessKey)}" />
@@ -518,28 +524,9 @@ function contactForm(lang) {
       <label for="name">${escapeHtml(c.name)} *</label>
       <input id="name" name="name" autocomplete="name" required />
     </div>
-    <div class="form-row">
-      <div class="field">
-        <label for="email">${escapeHtml(c.email)}</label>
-        <input id="email" name="email" type="email" autocomplete="email" />
-      </div>
-      <div class="field">
-        <label for="phone">${escapeHtml(c.phone)}</label>
-        <input id="phone" name="phone" type="tel" autocomplete="tel" />
-      </div>
-    </div>
-    <div class="form-row">
-      <div class="field">
-        <label for="commune">${escapeHtml(c.commune)}</label>
-        <input id="commune" name="commune" autocomplete="address-level2" />
-      </div>
-      <div class="field">
-        <label for="project_type">${escapeHtml(c.projectType)}</label>
-        <select id="project_type" name="project_type">
-          <option value="">${lang === "fr" ? "Sélectionner" : "Select"}</option>
-          ${options}
-        </select>
-      </div>
+    <div class="field">
+      <label for="contact">${escapeHtml(c.contact)} *</label>
+      <input id="contact" name="contact" autocomplete="on" required />
     </div>
     <div class="field">
       <label for="message">${escapeHtml(c.message)} *</label>
@@ -556,13 +543,18 @@ function contactPage(lang) {
   const c = copy[lang];
   const page = c.contactPage;
   const prepare = page.prepare.map((item) => `<li>${escapeHtml(item)}</li>`).join("");
+  const heroActions = `
+          ${button(whatsappLink(lang), c.whatsappCta, "primary contact-hero")}
+          ${button(`tel:${site.phoneHref}`, `${c.phoneCta} ${site.phoneDisplay}`, "secondary")}`;
 
-  return layout(lang, "contact", `${pageHeading(lang, "contact", page.eyebrow, page.h1, page.lead, site.images.contact)}
+  return layout(lang, "contact", `${pageHeading(lang, "contact", page.eyebrow, page.h1, page.lead, site.images.contact, heroActions)}
 <section class="section">
   <div class="container contact-grid">
-    <div>
+    ${contactForm(lang)}
+    <div class="contact-side">
       <div class="contact-actions">
-        ${button(`tel:${site.phoneHref}`, `${c.phoneCta} ${site.phoneDisplay}`, "primary")}
+        ${button(whatsappLink(lang), c.whatsappCta, "primary contact-hero")}
+        ${button(`tel:${site.phoneHref}`, `${c.phoneCta} ${site.phoneDisplay}`, "secondary")}
         ${button(`mailto:${site.email}`, c.emailCta, "secondary")}
       </div>
       <div class="contact-note">
@@ -574,7 +566,6 @@ function contactPage(lang) {
         <ul>${prepare}</ul>
       </div>
     </div>
-    ${contactForm(lang)}
   </div>
 </section>
 `);

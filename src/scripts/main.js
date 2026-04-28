@@ -61,19 +61,18 @@ function initContactForm() {
 
   form.addEventListener("submit", async (event) => {
     const name = form.querySelector("#name");
-    const email = form.querySelector("#email");
-    const phone = form.querySelector("#phone");
+    const contact = form.querySelector("#contact");
     const message = form.querySelector("#message");
     const honeypot = form.querySelector("[name='botcheck']");
     const text = form.dataset.lang === "fr"
       ? {
-          validation: "Merci de renseigner votre nom, votre message et au moins un moyen de contact: email ou téléphone.",
+          validation: "Merci de renseigner votre nom, un téléphone ou email, et votre message.",
           email: "Merci de renseigner une adresse email valide.",
           success: "Merci, votre message a bien été envoyé.",
           error: "Une erreur est survenue. Vous pouvez aussi nous contacter par email ou téléphone."
         }
       : {
-          validation: "Please provide your name, message and at least one contact method: email or phone.",
+          validation: "Please provide your name, phone or email, and message.",
           email: "Please enter a valid email address.",
           success: "Thank you, your message has been sent.",
           error: "Something went wrong. You can also contact us by email or phone."
@@ -84,14 +83,14 @@ function initContactForm() {
       return;
     }
 
-    const hasContact = email.value.trim() || phone.value.trim();
-    if (!name.value.trim() || !message.value.trim() || !hasContact) {
+    const contactValue = contact.value.trim();
+    if (!name.value.trim() || !message.value.trim() || !contactValue) {
       event.preventDefault();
       setFeedback(feedback, text.validation, "error");
       return;
     }
 
-    if (email.value.trim() && !email.checkValidity()) {
+    if (contactValue.includes("@") && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(contactValue)) {
       event.preventDefault();
       setFeedback(feedback, text.email, "error");
       return;
