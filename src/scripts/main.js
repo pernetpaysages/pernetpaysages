@@ -1,7 +1,5 @@
 ﻿import "../styles/main.css";
-import { projects } from "../data/content.js";
-
-const GA_MEASUREMENT_ID = "G-XXXXXXXXXX"; // Replace with your GA4 id or keep placeholder to disable analytics.
+import { projects } from "../data/content.js";`r`n`r`nconst BASE_URL = import.meta.env.BASE_URL || "/";`r`nconst withBase = (path) => `${BASE_URL}${String(path).replace(/^\/+/, "")}`;`r`n`r`nconst GA_MEASUREMENT_ID = "G-XXXXXXXXXX"; // Replace with your GA4 id or keep placeholder to disable analytics.
 
 function initAnalytics() {
   if (!GA_MEASUREMENT_ID || GA_MEASUREMENT_ID === "G-XXXXXXXXXX") {
@@ -60,7 +58,7 @@ function initProjects() {
     .map(
       (project) => `
       <article class="project-card" data-reveal>
-        <img src="${project.cover}" alt="${project.title}" loading="lazy" decoding="async" width="1200" height="800" />
+        <img src="${withBase(project.cover)}" alt="${project.title}" loading="lazy" decoding="async" width="1200" height="800" />
         <div class="project-card__body">
           <p class="eyebrow">${project.city} · ${project.type}</p>
           <h3>${project.title}</h3>
@@ -74,7 +72,7 @@ function initProjects() {
             ${project.gallery
               .map(
                 (image, idx) =>
-                  `<img src="${image}" alt="${project.title} ${idx + 1}" loading="lazy" decoding="async" width="800" height="560" />`
+                  `<img src="${withBase(image)}" alt="${project.title} ${idx + 1}" loading="lazy" decoding="async" width="800" height="560" />`
               )
               .join("")}
           </div>
@@ -142,6 +140,7 @@ initMobileMenu();
 initReveal();
 initProjects();
 initContactForm();
+
 
 
 

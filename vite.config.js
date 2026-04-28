@@ -1,4 +1,5 @@
 ﻿import { defineConfig } from "vite";
+import { resolve } from "node:path";
 
 // BASE_PATH examples:
 // - Custom domain: BASE_PATH=/
@@ -6,5 +7,25 @@
 const base = process.env.BASE_PATH || "/";
 
 export default defineConfig({
-  base
+  base,
+  build: {
+    rollupOptions: {
+      input: {
+        main: resolve(__dirname, "index.html"),
+        notFound: resolve(__dirname, "404.html"),
+        frHome: resolve(__dirname, "fr/index.html"),
+        frServices: resolve(__dirname, "fr/prestations/index.html"),
+        frProjects: resolve(__dirname, "fr/realisations/index.html"),
+        frAbout: resolve(__dirname, "fr/a-propos/index.html"),
+        frContact: resolve(__dirname, "fr/contact/index.html"),
+        frPrivacy: resolve(__dirname, "fr/confidentialite/index.html"),
+        enHome: resolve(__dirname, "en/index.html"),
+        enServices: resolve(__dirname, "en/services/index.html"),
+        enProjects: resolve(__dirname, "en/projects/index.html"),
+        enAbout: resolve(__dirname, "en/about/index.html"),
+        enContact: resolve(__dirname, "en/contact/index.html"),
+        enPrivacy: resolve(__dirname, "en/privacy/index.html")
+      }
+    }
+  }
 });
