@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 240" fill="none">
+  <rect width="1200" height="240" fill="#fffdf8"/>
+  <g transform="translate(64,34)">
+    <rect width="172" height="172" rx="30" fill="#0f2f1f"/>
+    <path d="M40 106c22-4 35-23 46-53 17 12 28 29 31 56" stroke="#f7f4ec" stroke-width="8" stroke-linecap="round"/>
+    <circle cx="118" cy="62" r="22" fill="#9aa88f"/>
+  </g>
+  <text x="280" y="128" fill="#242521" font-size="72" font-family="Georgia, 'Times New Roman', serif">Pernet Paysages</text>
+</svg>
