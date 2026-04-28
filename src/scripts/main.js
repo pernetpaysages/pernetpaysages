@@ -1,5 +1,10 @@
 ﻿import "../styles/main.css";
-import { projects } from "../data/content.js";`r`n`r`nconst BASE_URL = import.meta.env.BASE_URL || "/";`r`nconst withBase = (path) => `${BASE_URL}${String(path).replace(/^\/+/, "")}`;`r`n`r`nconst GA_MEASUREMENT_ID = "G-XXXXXXXXXX"; // Replace with your GA4 id or keep placeholder to disable analytics.
+import { projects } from "../data/content.js";
+
+const BASE_URL = import.meta.env.BASE_URL || "/";
+const withBase = (path) => `${BASE_URL}${String(path).replace(/^\/+/, "")}`;
+
+const GA_MEASUREMENT_ID = "G-XXXXXXXXXX"; // Replace with your GA4 id or keep placeholder to disable analytics.
 
 function initAnalytics() {
   if (!GA_MEASUREMENT_ID || GA_MEASUREMENT_ID === "G-XXXXXXXXXX") {
@@ -140,6 +145,7 @@ initMobileMenu();
 initReveal();
 initProjects();
 initContactForm();
+
 
 
 
