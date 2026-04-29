@@ -322,9 +322,9 @@ function footer(lang) {
 
   return `<footer class="site-footer">
   <div class="container footer-grid">
-    <div>
+    <div class="footer-brand">
       ${logoMarkup("footer-logo", 260, 127, "lazy")}
-      <p>${escapeHtml(c.footerBaseline)}</p>
+      <p class="footer-baseline">${escapeHtml(c.footerBaseline)}</p>
     </div>
     <div>
       <p class="footer-title">${escapeHtml(c.contactTitle)}</p>
@@ -433,6 +433,10 @@ function homePage(lang) {
   const projectCards = previewProjects
     .map((project) => projectCard(project, lang, true))
     .join("");
+  const projectsLead = h.projectsLead
+    ? `  <p>${escapeHtml(h.projectsLead)}</p>
+`
+    : "";
 
   return layout(lang, "home", `<section class="home-hero" aria-labelledby="home-title">
   ${imageMarkup(site.images.hero, lang === "fr" ? "Jardin avec escalier en pierre et vue sur le Léman" : "Garden with stone steps and a Lake Geneva view", {
@@ -468,7 +472,7 @@ function homePage(lang) {
       <p class="eyebrow">${lang === "fr" ? "Réalisations" : "Projects"}</p>
       <h2>${escapeHtml(h.projectsTitle)}</h2>
     </div>
-    <p>${escapeHtml(h.projectsLead)}</p>
+${projectsLead}
   </div>
   <div class="container project-preview-grid">${projectCards}</div>
   <div class="container section-action">${button(route(lang, "projects"), lang === "fr" ? "Voir la galerie" : "View the gallery", "secondary")}</div>

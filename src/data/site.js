@@ -153,7 +153,7 @@ export const copy = {
     menu: "Menu",
     close: "Fermer",
     skip: "Aller au contenu",
-    footerBaseline: "Paysagiste indépendant depuis 2017",
+    footerBaseline: "Jardins & extérieurs",
     footerNav: "Liens utiles",
     contactTitle: "Contact",
     home: {
@@ -172,8 +172,7 @@ export const copy = {
       servicesLead:
         "Chaque intervention reste lisible: comprendre le lieu, choisir les bons matériaux, planter avec mesure et prévoir l'entretien.",
       projectsTitle: "Réalisations sélectionnées",
-      projectsLead:
-        "Une sélection d'images réelles, présentées sans lieux ni clients inventés.",
+      projectsLead: "",
       methodTitle: "Une méthode simple",
       aboutTitle: "Le soin du paysage, le sens du détail.",
       aboutText:
@@ -292,7 +291,7 @@ export const copy = {
     menu: "Menu",
     close: "Close",
     skip: "Skip to content",
-    footerBaseline: "Independent landscaper since 2017",
+    footerBaseline: "Gardens & outdoor spaces",
     footerNav: "Useful links",
     contactTitle: "Contact",
     home: {
@@ -311,8 +310,7 @@ export const copy = {
       servicesLead:
         "Each intervention stays clear: understand the place, choose the right materials, plant with restraint and plan future care.",
       projectsTitle: "Selected projects",
-      projectsLead:
-        "A selection of real images, presented without invented places or clients.",
+      projectsLead: "",
       methodTitle: "A simple method",
       aboutTitle: "Landscape care with attention to detail.",
       aboutText:
