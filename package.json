@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "generate": "node scripts/generate-site.mjs",
+    "optimize:images": "node scripts/generate-responsive-images.mjs",
     "check": "node scripts/check-site.mjs",
     "dev": "npm run generate && vite",
     "build": "npm run generate && vite build && npm run check",

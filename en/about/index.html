@@ -20,10 +20,13 @@
   <meta name="twitter:title" content="About | Pernet Paysages, independent landscaper in Morges" />
   <meta name="twitter:description" content="Pernet Paysages is an independent landscaping business founded in 2017, working in Morges, across the canton of Vaud and the Lake Geneva region." />
   <meta name="twitter:image" content="https://pernet-paysages.ch/media/optimized/og-pernet-paysages.jpg" />
+  <meta name="theme-color" content="#123525" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
   <link rel="icon" href="/media/favicon.png" type="image/png" />
-  <script>
-    document.documentElement.classList.add("page-transitions");
-  </script>
+  <link rel="preload" as="image" href="/media/optimized/realisations/projet-05/cover-760.avif" imagesrcset="/media/optimized/realisations/projet-05/cover-480.avif 480w, /media/optimized/realisations/projet-05/cover-760.avif 760w" imagesizes="(min-width: 900px) 44vw, 100vw" type="image/avif" fetchpriority="high" />
+
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"LandscapingBusiness","@id":"https://pernet-paysages.ch/#business","name":"Pernet Paysages","url":"https://pernet-paysages.ch","image":"https://pernet-paysages.ch/media/optimized/og-pernet-paysages.jpg","telephone":"+41792437224","email":"pernet.paysages@gmail.com","description":"Landscaper for garden creation, renovation and maintenance across the canton of Vaud and the Lake Geneva region.","priceRange":"Sur devis","address":{"@type":"PostalAddress","addressRegion":"Vaud","addressCountry":"CH"},"areaServed":["Canton de Vaud","Arc lémanique","Lake Geneva region"],"openingHoursSpecification":{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"08:00","closes":"18:00"}}</script>
   <script type="module" src="/src/scripts/main.js"></script>
 </head>
@@ -32,7 +35,11 @@
 <header class="site-header" data-site-header>
   <div class="container site-header__inner">
     <a class="brand" href="/en/" aria-label="Pernet Paysages">
-      <img src="/media/logo-pernet-paysages-wordmark.png" alt="Pernet Paysages" width="214" height="104" />
+      <picture class="brand-logo">
+    <source srcset="/media/optimized/logo-pernet-paysages-wordmark-220.avif 220w, /media/optimized/logo-pernet-paysages-wordmark-420.avif 420w, /media/optimized/logo-pernet-paysages-wordmark-560.avif 560w" type="image/avif" sizes="(max-width: 520px) 152px, 210px" />
+    <source srcset="/media/optimized/logo-pernet-paysages-wordmark-220.webp 220w, /media/optimized/logo-pernet-paysages-wordmark-420.webp 420w, /media/optimized/logo-pernet-paysages-wordmark-560.webp 560w" type="image/webp" sizes="(max-width: 520px) 152px, 210px" />
+    <img src="/media/logo-pernet-paysages-wordmark.png" alt="Pernet Paysages" width="214" height="104" decoding="async" />
+  </picture>
     </a>
     <nav class="main-nav" aria-label="Main navigation">
       <ul><li><a class="nav-link" href="/en/">Home</a></li><li><a class="nav-link" href="/en/services/">Services</a></li><li><a class="nav-link" href="/en/projects/">Projects</a></li><li><a class="nav-link" href="/en/about/" aria-current="page">About</a></li><li><a class="nav-link" href="/en/contact/">Contact</a></li></ul>
@@ -74,8 +81,9 @@
         </div>
       </div>
       <div class="page-hero__media"><picture class="media-frame">
-    <source srcset="/media/optimized/realisations/projet-05/cover.webp" type="image/webp" sizes="(min-width: 900px) 50vw, 100vw" />
-    <img src="/media/optimized/realisations/projet-05/cover.jpg" alt="Flowering beds maintained in a residential garden" loading="eager" decoding="async" />
+    <source srcset="/media/optimized/realisations/projet-05/cover-480.avif 480w, /media/optimized/realisations/projet-05/cover-760.avif 760w" type="image/avif" sizes="(min-width: 900px) 50vw, 100vw" />
+    <source srcset="/media/optimized/realisations/projet-05/cover-480.webp 480w, /media/optimized/realisations/projet-05/cover-760.webp 760w" type="image/webp" sizes="(min-width: 900px) 50vw, 100vw" />
+    <img src="/media/optimized/realisations/projet-05/cover.jpg" srcset="/media/optimized/realisations/projet-05/cover-480.jpg 480w, /media/optimized/realisations/projet-05/cover-760.jpg 760w" sizes="(min-width: 900px) 50vw, 100vw" alt="Flowering beds maintained in a residential garden" loading="eager" decoding="async" />
   </picture></div>
     </div>
   </section>
@@ -111,7 +119,11 @@
 <footer class="site-footer">
   <div class="container footer-grid">
     <div>
-      <img class="footer-logo" src="/media/logo-pernet-paysages-wordmark.png" alt="Pernet Paysages" width="260" height="127" />
+      <picture class="footer-logo">
+    <source srcset="/media/optimized/logo-pernet-paysages-wordmark-220.avif 220w, /media/optimized/logo-pernet-paysages-wordmark-420.avif 420w, /media/optimized/logo-pernet-paysages-wordmark-560.avif 560w" type="image/avif" sizes="220px" />
+    <source srcset="/media/optimized/logo-pernet-paysages-wordmark-220.webp 220w, /media/optimized/logo-pernet-paysages-wordmark-420.webp 420w, /media/optimized/logo-pernet-paysages-wordmark-560.webp 560w" type="image/webp" sizes="220px" />
+    <img src="/media/logo-pernet-paysages-wordmark.png" alt="Pernet Paysages" width="260" height="127" loading="lazy" fetchpriority="low" decoding="async" />
+  </picture>
       <p>Independent landscaper since 2017</p>
     </div>
     <div>

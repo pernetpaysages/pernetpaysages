@@ -20,10 +20,13 @@
   <meta name="twitter:title" content="Pernet Paysages | Landscaper in Vaud and the Lake Geneva region" />
   <meta name="twitter:description" content="Garden creation, renovation and maintenance across the canton of Vaud and the Lake Geneva region. Pernet Paysages creates careful, durable outdoor spaces." />
   <meta name="twitter:image" content="https://pernet-paysages.ch/media/optimized/og-pernet-paysages.jpg" />
+  <meta name="theme-color" content="#123525" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
   <link rel="icon" href="/media/favicon.png" type="image/png" />
-  <script>
-    document.documentElement.classList.add("page-transitions");
-  </script>
+  <link rel="preload" as="image" href="/media/optimized/hero-1100.avif" imagesrcset="/media/optimized/hero-480.avif 480w, /media/optimized/hero-760.avif 760w, /media/optimized/hero-1100.avif 1100w, /media/optimized/hero-1600.avif 1600w, /media/optimized/hero-2200.avif 2200w" imagesizes="100vw" type="image/avif" fetchpriority="high" />
+
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"LandscapingBusiness","@id":"https://pernet-paysages.ch/#business","name":"Pernet Paysages","url":"https://pernet-paysages.ch","image":"https://pernet-paysages.ch/media/optimized/og-pernet-paysages.jpg","telephone":"+41792437224","email":"pernet.paysages@gmail.com","description":"Landscaper for garden creation, renovation and maintenance across the canton of Vaud and the Lake Geneva region.","priceRange":"Sur devis","address":{"@type":"PostalAddress","addressRegion":"Vaud","addressCountry":"CH"},"areaServed":["Canton de Vaud","Arc lémanique","Lake Geneva region"],"openingHoursSpecification":{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"08:00","closes":"18:00"}}</script>
   <script type="module" src="/src/scripts/main.js"></script>
 </head>
@@ -32,7 +35,11 @@
 <header class="site-header" data-site-header>
   <div class="container site-header__inner">
     <a class="brand" href="/en/" aria-label="Pernet Paysages">
-      <img src="/media/logo-pernet-paysages-wordmark.png" alt="Pernet Paysages" width="214" height="104" />
+      <picture class="brand-logo">
+    <source srcset="/media/optimized/logo-pernet-paysages-wordmark-220.avif 220w, /media/optimized/logo-pernet-paysages-wordmark-420.avif 420w, /media/optimized/logo-pernet-paysages-wordmark-560.avif 560w" type="image/avif" sizes="(max-width: 520px) 152px, 210px" />
+    <source srcset="/media/optimized/logo-pernet-paysages-wordmark-220.webp 220w, /media/optimized/logo-pernet-paysages-wordmark-420.webp 420w, /media/optimized/logo-pernet-paysages-wordmark-560.webp 560w" type="image/webp" sizes="(max-width: 520px) 152px, 210px" />
+    <img src="/media/logo-pernet-paysages-wordmark.png" alt="Pernet Paysages" width="214" height="104" decoding="async" />
+  </picture>
     </a>
     <nav class="main-nav" aria-label="Main navigation">
       <ul><li><a class="nav-link" href="/en/" aria-current="page">Home</a></li><li><a class="nav-link" href="/en/services/">Services</a></li><li><a class="nav-link" href="/en/projects/">Projects</a></li><li><a class="nav-link" href="/en/about/">About</a></li><li><a class="nav-link" href="/en/contact/">Contact</a></li></ul>
@@ -63,8 +70,9 @@
 <main id="contenu">
 <section class="home-hero" aria-labelledby="home-title">
   <picture class="home-hero__image">
-    <source srcset="/media/optimized/hero.webp" type="image/webp" sizes="100vw" />
-    <img src="/media/optimized/hero.jpg" alt="Garden with stone steps and a Lake Geneva view" loading="eager" fetchpriority="high" decoding="async" />
+    <source srcset="/media/optimized/hero-480.avif 480w, /media/optimized/hero-760.avif 760w, /media/optimized/hero-1100.avif 1100w, /media/optimized/hero-1600.avif 1600w, /media/optimized/hero-2200.avif 2200w" type="image/avif" sizes="100vw" />
+    <source srcset="/media/optimized/hero-480.webp 480w, /media/optimized/hero-760.webp 760w, /media/optimized/hero-1100.webp 1100w, /media/optimized/hero-1600.webp 1600w, /media/optimized/hero-2200.webp 2200w" type="image/webp" sizes="100vw" />
+    <img src="/media/optimized/hero.jpg" srcset="/media/optimized/hero-480.jpg 480w, /media/optimized/hero-760.jpg 760w, /media/optimized/hero-1100.jpg 1100w, /media/optimized/hero-1600.jpg 1600w, /media/optimized/hero-2200.jpg 2200w" sizes="100vw" alt="Garden with stone steps and a Lake Geneva view" loading="eager" fetchpriority="high" decoding="async" />
   </picture>
   <div class="home-hero__shade" aria-hidden="true"></div>
   <div class="container home-hero__content">
@@ -113,8 +121,9 @@
   </div>
   <div class="container project-preview-grid"><article class="project-card project-card--compact" data-reveal>
       <div class="project-card__media"><picture class="project-cover">
-    <source srcset="/media/optimized/realisations/projet-01/cover.webp" type="image/webp" sizes="(min-width: 900px) 50vw, 100vw" />
-    <img src="/media/optimized/realisations/projet-01/cover.jpg" alt="Stone steps and structured garden" loading="lazy" decoding="async" />
+    <source srcset="/media/optimized/realisations/projet-01/cover-480.avif 480w, /media/optimized/realisations/projet-01/cover-760.avif 760w" type="image/avif" sizes="(min-width: 900px) 50vw, 100vw" />
+    <source srcset="/media/optimized/realisations/projet-01/cover-480.webp 480w, /media/optimized/realisations/projet-01/cover-760.webp 760w" type="image/webp" sizes="(min-width: 900px) 50vw, 100vw" />
+    <img src="/media/optimized/realisations/projet-01/cover.jpg" srcset="/media/optimized/realisations/projet-01/cover-480.jpg 480w, /media/optimized/realisations/projet-01/cover-760.jpg 760w" sizes="(min-width: 900px) 50vw, 100vw" alt="Stone steps and structured garden" loading="lazy" fetchpriority="low" decoding="async" />
   </picture></div>
       <div class="project-card__body">
         <h3>Stone steps and structured garden</h3>
@@ -122,8 +131,9 @@
       </div>
     </article><article class="project-card project-card--compact" data-reveal>
       <div class="project-card__media"><picture class="project-cover">
-    <source srcset="/media/optimized/realisations/projet-02/cover.webp" type="image/webp" sizes="(min-width: 900px) 50vw, 100vw" />
-    <img src="/media/optimized/realisations/projet-02/cover.jpg" alt="Stone terrace and soft planting" loading="lazy" decoding="async" />
+    <source srcset="/media/optimized/realisations/projet-02/cover-480.avif 480w, /media/optimized/realisations/projet-02/cover-760.avif 760w" type="image/avif" sizes="(min-width: 900px) 50vw, 100vw" />
+    <source srcset="/media/optimized/realisations/projet-02/cover-480.webp 480w, /media/optimized/realisations/projet-02/cover-760.webp 760w" type="image/webp" sizes="(min-width: 900px) 50vw, 100vw" />
+    <img src="/media/optimized/realisations/projet-02/cover.jpg" srcset="/media/optimized/realisations/projet-02/cover-480.jpg 480w, /media/optimized/realisations/projet-02/cover-760.jpg 760w" sizes="(min-width: 900px) 50vw, 100vw" alt="Stone terrace and soft planting" loading="lazy" fetchpriority="low" decoding="async" />
   </picture></div>
       <div class="project-card__body">
         <h3>Stone terrace and soft planting</h3>
@@ -131,8 +141,9 @@
       </div>
     </article><article class="project-card project-card--compact" data-reveal>
       <div class="project-card__media"><picture class="project-cover">
-    <source srcset="/media/optimized/realisations/projet-03/cover.webp" type="image/webp" sizes="(min-width: 900px) 50vw, 100vw" />
-    <img src="/media/optimized/realisations/projet-03/cover.jpg" alt="Beds, lawn and readable volumes" loading="lazy" decoding="async" />
+    <source srcset="/media/optimized/realisations/projet-03/cover-480.avif 480w, /media/optimized/realisations/projet-03/cover-760.avif 760w, /media/optimized/realisations/projet-03/cover-1100.avif 1100w" type="image/avif" sizes="(min-width: 900px) 50vw, 100vw" />
+    <source srcset="/media/optimized/realisations/projet-03/cover-480.webp 480w, /media/optimized/realisations/projet-03/cover-760.webp 760w, /media/optimized/realisations/projet-03/cover-1100.webp 1100w" type="image/webp" sizes="(min-width: 900px) 50vw, 100vw" />
+    <img src="/media/optimized/realisations/projet-03/cover.jpg" srcset="/media/optimized/realisations/projet-03/cover-480.jpg 480w, /media/optimized/realisations/projet-03/cover-760.jpg 760w, /media/optimized/realisations/projet-03/cover-1100.jpg 1100w" sizes="(min-width: 900px) 50vw, 100vw" alt="Beds, lawn and readable volumes" loading="lazy" fetchpriority="low" decoding="async" />
   </picture></div>
       <div class="project-card__body">
         <h3>Beds, lawn and readable volumes</h3>
@@ -140,8 +151,9 @@
       </div>
     </article><article class="project-card project-card--compact" data-reveal>
       <div class="project-card__media"><picture class="project-cover">
-    <source srcset="/media/optimized/realisations/projet-04/cover.webp" type="image/webp" sizes="(min-width: 900px) 50vw, 100vw" />
-    <img src="/media/optimized/realisations/projet-04/cover.jpg" alt="Existing garden refresh" loading="lazy" decoding="async" />
+    <source srcset="/media/optimized/realisations/projet-04/cover-480.avif 480w, /media/optimized/realisations/projet-04/cover-760.avif 760w, /media/optimized/realisations/projet-04/cover-1100.avif 1100w" type="image/avif" sizes="(min-width: 900px) 50vw, 100vw" />
+    <source srcset="/media/optimized/realisations/projet-04/cover-480.webp 480w, /media/optimized/realisations/projet-04/cover-760.webp 760w, /media/optimized/realisations/projet-04/cover-1100.webp 1100w" type="image/webp" sizes="(min-width: 900px) 50vw, 100vw" />
+    <img src="/media/optimized/realisations/projet-04/cover.jpg" srcset="/media/optimized/realisations/projet-04/cover-480.jpg 480w, /media/optimized/realisations/projet-04/cover-760.jpg 760w, /media/optimized/realisations/projet-04/cover-1100.jpg 1100w" sizes="(min-width: 900px) 50vw, 100vw" alt="Existing garden refresh" loading="lazy" fetchpriority="low" decoding="async" />
   </picture></div>
       <div class="project-card__body">
         <h3>Existing garden refresh</h3>
@@ -171,7 +183,11 @@
 <footer class="site-footer">
   <div class="container footer-grid">
     <div>
-      <img class="footer-logo" src="/media/logo-pernet-paysages-wordmark.png" alt="Pernet Paysages" width="260" height="127" />
+      <picture class="footer-logo">
+    <source srcset="/media/optimized/logo-pernet-paysages-wordmark-220.avif 220w, /media/optimized/logo-pernet-paysages-wordmark-420.avif 420w, /media/optimized/logo-pernet-paysages-wordmark-560.avif 560w" type="image/avif" sizes="220px" />
+    <source srcset="/media/optimized/logo-pernet-paysages-wordmark-220.webp 220w, /media/optimized/logo-pernet-paysages-wordmark-420.webp 420w, /media/optimized/logo-pernet-paysages-wordmark-560.webp 560w" type="image/webp" sizes="220px" />
+    <img src="/media/logo-pernet-paysages-wordmark.png" alt="Pernet Paysages" width="260" height="127" loading="lazy" fetchpriority="low" decoding="async" />
+  </picture>
       <p>Independent landscaper since 2017</p>
     </div>
     <div>

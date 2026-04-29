@@ -15,6 +15,7 @@ function initPageTransitions() {
     return;
   }
 
+  document.documentElement.classList.add("page-transitions");
   window.addEventListener("pageshow", setReady);
   setReady();
 

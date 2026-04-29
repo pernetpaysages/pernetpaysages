@@ -71,6 +71,12 @@ Les originaux restent dans `public/media/`.
 
 Les pages utilisent les dérivés optimisés dans `public/media/optimized/`, générés à partir des vraies images du repo avec auto-orientation, compression et redimensionnement.
 
+Pour générer les variantes responsives AVIF/WebP/JPEG utilisées par `srcset`, ImageMagick doit être disponible localement, puis lancer:
+
+```bash
+npm run optimize:images
+```
+
 Important: `public/media/about.jpg` contient un filigrane indiquant une image générée par IA. Le site ne l'utilise pas comme réalisation.
 
 ## Formulaire

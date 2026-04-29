@@ -1,10 +1,11 @@
-import { mkdirSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { copy, faqs, pages, projects, services, site } from "../src/data/site.js";
 
 const root = process.cwd();
 const languages = ["fr", "en"];
 const pageKeys = ["home", "services", "projects", "about", "contact", "privacy", "legal"];
+const responsiveWidths = [480, 760, 1100, 1600, 2200];
 
 function escapeHtml(value) {
   return String(value)
@@ -40,6 +41,45 @@ function optimizedPath(path, ext = "jpg") {
   return path.replace(/^\/media\//, "/media/optimized/").replace(/\.(jpe?g|png)$/i, `.${ext}`);
 }
 
+function variantPath(path, width, ext) {
+  return path.replace(/\.(jpe?g|png|webp|avif)$/i, `-${width}.${ext}`);
+}
+
+function publicPathExists(path) {
+  return existsSync(join(root, "public", path.replace(/^\//, "")));
+}
+
+function variantsFor(path, ext) {
+  return responsiveWidths
+    .map((width) => {
+      const variant = variantPath(path, width, ext);
+      return publicPathExists(variant) ? { width, path: variant } : null;
+    })
+    .filter(Boolean);
+}
+
+function srcsetFor(path, ext) {
+  return variantsFor(path, ext)
+    .map((variant) => `${variant.path} ${variant.width}w`)
+    .join(", ");
+}
+
+function preloadImage(path, sizes = "100vw") {
+  const avif = optimizedPath(path, "avif");
+  const webp = optimizedPath(path, "webp");
+  const avifSrcset = srcsetFor(avif, "avif");
+  const webpSrcset = srcsetFor(webp, "webp");
+  const srcset = avifSrcset || webpSrcset;
+  const format = avifSrcset ? "avif" : "webp";
+  const base = avifSrcset ? avif : webp;
+  const variants = variantsFor(base, format);
+  const href = variants.find((variant) => variant.width === 1100)?.path || variants.at(-1)?.path || base;
+  const preloadHref = publicPathExists(href) ? href : base;
+  const srcsetAttr = srcset ? ` imagesrcset="${attr(srcset)}"` : "";
+
+  return `<link rel="preload" as="image" href="${attr(preloadHref)}"${srcsetAttr} imagesizes="${attr(sizes)}" type="image/${format}" fetchpriority="high" />`;
+}
+
 function imageMarkup(path, alt, options = {}) {
   const {
     className = "",
@@ -49,15 +89,36 @@ function imageMarkup(path, alt, options = {}) {
     decorative = false
   } = options;
   const jpg = optimizedPath(path, "jpg");
+  const avif = optimizedPath(path, "avif");
   const webp = optimizedPath(path, "webp");
+  const jpgSrcset = srcsetFor(jpg, "jpg");
+  const avifSrcset = srcsetFor(avif, "avif");
+  const webpSrcset = srcsetFor(webp, "webp");
   const loadingAttr = loading ? ` loading="${attr(loading)}"` : "";
-  const priorityAttr = fetchpriority ? ` fetchpriority="${attr(fetchpriority)}"` : "";
+  const priority = fetchpriority || (loading === "lazy" ? "low" : "");
+  const priorityAttr = priority ? ` fetchpriority="${attr(priority)}"` : "";
   const classAttr = className ? ` class="${attr(className)}"` : "";
+  const jpgSrcsetAttr = jpgSrcset ? ` srcset="${attr(jpgSrcset)}" sizes="${attr(sizes)}"` : "";
+  const webpSrcsetValue = webpSrcset || webp;
   const altText = decorative ? "" : alt;
 
   return `<picture${classAttr}>
+    ${avifSrcset ? `<source srcset="${attr(avifSrcset)}" type="image/avif" sizes="${attr(sizes)}" />` : ""}
+    <source srcset="${attr(webpSrcsetValue)}" type="image/webp" sizes="${attr(sizes)}" />
+    <img src="${attr(jpg)}"${jpgSrcsetAttr} alt="${attr(altText)}"${loadingAttr}${priorityAttr} decoding="async" />
+  </picture>`;
+}
+
+function logoMarkup(className, width, height, loading = "eager") {
+  const sizes = className === "footer-logo" ? "220px" : "(max-width: 520px) 152px, 210px";
+  const avif = "/media/optimized/logo-pernet-paysages-wordmark-220.avif 220w, /media/optimized/logo-pernet-paysages-wordmark-420.avif 420w, /media/optimized/logo-pernet-paysages-wordmark-560.avif 560w";
+  const webp = "/media/optimized/logo-pernet-paysages-wordmark-220.webp 220w, /media/optimized/logo-pernet-paysages-wordmark-420.webp 420w, /media/optimized/logo-pernet-paysages-wordmark-560.webp 560w";
+  const loadingAttr = loading === "lazy" ? ` loading="lazy" fetchpriority="low"` : "";
+
+  return `<picture class="${attr(className)}">
+    <source srcset="${attr(avif)}" type="image/avif" sizes="${attr(sizes)}" />
     <source srcset="${attr(webp)}" type="image/webp" sizes="${attr(sizes)}" />
-    <img src="${attr(jpg)}" alt="${attr(altText)}"${loadingAttr}${priorityAttr} decoding="async" />
+    <img src="/media/logo-pernet-paysages-wordmark.png" alt="${attr(site.name)}" width="${width}" height="${height}"${loadingAttr} decoding="async" />
   </picture>`;
 }
 
@@ -161,6 +222,14 @@ function head(lang, key) {
   const alternateEn = urlFor(route("en", key));
   const escapedTitle = escapeHtml(meta.title);
   const escapedDescription = escapeHtml(meta.description);
+  const preloadByPage = {
+    home: preloadImage(site.images.hero, "100vw"),
+    services: preloadImage(site.images.services, "(min-width: 900px) 44vw, 100vw"),
+    projects: preloadImage(site.images.projects, "(min-width: 900px) 44vw, 100vw"),
+    about: preloadImage(site.images.about, "(min-width: 900px) 44vw, 100vw"),
+    contact: preloadImage(site.images.contact, "100vw")
+  };
+  const preload = preloadByPage[key] ? `  ${preloadByPage[key]}\n` : "";
 
   return `<head>
   <meta charset="UTF-8" />
@@ -182,10 +251,12 @@ function head(lang, key) {
   <meta name="twitter:title" content="${escapedTitle}" />
   <meta name="twitter:description" content="${escapedDescription}" />
   <meta name="twitter:image" content="${attr(ogImage)}" />
+  <meta name="theme-color" content="#123525" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
   <link rel="icon" href="/media/favicon.png" type="image/png" />
-  <script>
-    document.documentElement.classList.add("page-transitions");
-  </script>
+${preload}
   <script type="application/ld+json">${JSON.stringify(schema(lang))}</script>
   <script type="module" src="/src/scripts/main.js"></script>
 </head>`;
@@ -206,7 +277,7 @@ function header(lang, activeKey) {
 <header class="site-header" data-site-header>
   <div class="container site-header__inner">
     <a class="brand" href="${attr(route(lang, "home"))}" aria-label="${attr(site.name)}">
-      <img src="/media/logo-pernet-paysages-wordmark.png" alt="${attr(site.name)}" width="214" height="104" />
+      ${logoMarkup("brand-logo", 214, 104)}
     </a>
     <nav class="main-nav" aria-label="${lang === "fr" ? "Navigation principale" : "Main navigation"}">
       <ul>${nav}</ul>
@@ -252,7 +323,7 @@ function footer(lang) {
   return `<footer class="site-footer">
   <div class="container footer-grid">
     <div>
-      <img class="footer-logo" src="/media/logo-pernet-paysages-wordmark.png" alt="${attr(site.name)}" width="260" height="127" />
+      ${logoMarkup("footer-logo", 260, 127, "lazy")}
       <p>${escapeHtml(c.footerBaseline)}</p>
     </div>
     <div>
