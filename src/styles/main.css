@@ -1327,10 +1327,23 @@ textarea {
 
 .footer-contact-list a {
   text-decoration: none;
+  cursor: pointer;
 }
 
 .footer-contact-list a:hover {
   color: var(--forest);
+}
+
+.footer-contact-list a[href^="tel:"] {
+  color: var(--forest);
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-color: rgba(167, 113, 61, 0.45);
+  text-underline-offset: 0.22em;
+}
+
+.footer-contact-list a[href^="tel:"]:hover {
+  text-decoration-color: currentColor;
 }
 
 .footer-contact-list .contact-icon {

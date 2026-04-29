@@ -72,7 +72,7 @@ export const pages = {
     services: {
       title: "Prestations de paysagisme à Morges et dans le canton de Vaud",
       description:
-        "Conception paysagère, création de jardin, rénovation, terrassement, terrasses, plantations, gazon, entretien, taille, élagage, arrosage et éclairage extérieur en Vaud."
+        "Conception paysagère, création de jardin, rénovation, terrassement, terrasses, plantations, gazon, entretien, taille et élagage en Vaud."
     },
     projects: {
       title: "Réalisations paysagères | Jardins, terrasses et plantations en Vaud",
@@ -109,7 +109,7 @@ export const pages = {
     services: {
       title: "Landscaping services in Morges and the canton of Vaud",
       description:
-        "Landscape design, garden creation, renovation, earthworks, stone terraces, planting, lawns, maintenance, pruning, tree work, irrigation and outdoor lighting in Vaud."
+        "Landscape design, garden creation, renovation, earthworks, stone terraces, planting, lawns, maintenance, pruning and tree work in Vaud."
     },
     projects: {
       title: "Landscape projects | Gardens, terraces and planting in Vaud",
@@ -587,51 +587,6 @@ export const services = [
       short: "Handle trees carefully according to condition, position and site safety.",
       benefit: "Interventions stay proportionate and reduce unnecessary risk to people and property.",
       includes: ["Tree assessment", "Reasoned pruning", "Felling when necessary", "Access management", "Removal by agreement"]
-    }
-  },
-  {
-    id: "arrosage",
-    fr: {
-      title: "Arrosage automatique",
-      short: "Installer ou adapter un arrosage cohérent avec les plantations et les usages.",
-      benefit: "Vous gagnez en confort tout en évitant le gaspillage lié à un système mal réglé.",
-      includes: ["Analyse des zones", "Choix du système", "Installation", "Réglages", "Mise en route saisonnière"]
-    },
-    en: {
-      title: "Automatic irrigation",
-      short: "Install or adapt irrigation in line with planting and use.",
-      benefit: "You gain comfort while avoiding waste caused by poorly adjusted systems.",
-      includes: ["Zone analysis", "System choice", "Installation", "Settings", "Seasonal start-up"]
-    }
-  },
-  {
-    id: "eclairage",
-    fr: {
-      title: "Éclairage extérieur",
-      short: "Souligner les accès, les volumes et les ambiances sans surcharger le jardin.",
-      benefit: "Les soirées deviennent plus confortables et les circulations plus lisibles.",
-      includes: ["Éclairage d'accès", "Mise en valeur douce", "Coordination avec plantations", "Passages de gaines", "Réglages"]
-    },
-    en: {
-      title: "Outdoor lighting",
-      short: "Highlight access, volumes and atmosphere without overloading the garden.",
-      benefit: "Evenings become more comfortable and circulation clearer.",
-      includes: ["Access lighting", "Subtle highlighting", "Coordination with planting", "Cable duct routes", "Adjustments"]
-    }
-  },
-  {
-    id: "piscines",
-    fr: {
-      title: "Piscines et abords extérieurs",
-      short: "Soigner les abords pour intégrer la piscine dans un ensemble paysager.",
-      benefit: "La piscine ne reste pas un objet isolé: elle dialogue avec les circulations, les plantations et les surfaces.",
-      includes: ["Abords minéraux", "Plantations adaptées", "Accès", "Finitions", "Coordination selon projet"]
-    },
-    en: {
-      title: "Pools and surrounding outdoor areas",
-      short: "Shape the surroundings so the pool belongs within the landscape.",
-      benefit: "The pool does not remain isolated: it works with paths, planting and surfaces.",
-      includes: ["Mineral surroundings", "Suitable planting", "Access", "Finishing", "Coordination by project"]
     }
   }
 ];
