@@ -299,38 +299,44 @@ function ctaBlock(lang, title, text, linkLabel = copy[lang].quoteCta) {
 </section>`;
 }
 
+function serviceIcon(id) {
+  const icons = {
+    conception: `<svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 39V10" /><path d="M24 20c-6 0-10-3-12-8 6 0 10 3 12 8Z" /><path d="M24 29c7 0 12-4 14-11-7 0-12 4-14 11Z" /></svg>`,
+    surfaces: `<svg viewBox="0 0 48 48" aria-hidden="true"><path d="M12 32h24" /><path d="M16 24h22" /><path d="M10 40h22" /><path d="M28 10l10 10" /><path d="M23 15l10 10" /></svg>`,
+    entretien: `<svg viewBox="0 0 48 48" aria-hidden="true"><path d="M15 34c10-2 16-8 20-20" /><path d="M17 18c4 0 8 3 9 7" /><path d="M28 28c4 0 7 2 9 5" /><path d="M12 38h24" /></svg>`,
+    plantations: `<svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 38V15" /><path d="M24 26c-6 0-10-3-12-8 6 0 10 3 12 8Z" /><path d="M24 23c6 0 10-3 12-8-6 0-10 3-12 8Z" /><path d="M14 38h20" /></svg>`
+  };
+
+  return icons[id] ?? icons.conception;
+}
+
 function homePage(lang) {
   const c = copy[lang];
   const h = c.home;
-  const featuredServices = services.filter((service) => service.featured).slice(0, 4);
-  const previewProjects = projects.slice(0, 3);
-
-  const proof = h.proof
-    .map((item) => `<li>${escapeHtml(item)}</li>`)
-    .join("");
+  const homeServiceIds = ["conception", "surfaces", "entretien", "plantations"];
+  const featuredServices = homeServiceIds
+    .map((id) => services.find((service) => service.id === id))
+    .filter(Boolean);
+  const previewProjects = projects.slice(0, 4);
 
   const serviceCards = featuredServices
     .map((service, index) => {
       const item = service[lang];
+      const title = service.id === "surfaces"
+        ? (lang === "fr" ? "Aménagements extérieurs" : "Exterior works")
+        : service.id === "entretien"
+          ? (lang === "fr" ? "Entretien & suivi" : "Maintenance & care")
+          : item.title;
       return `<article class="service-teaser service-teaser--${index + 1}" data-reveal>
-        <p class="service-teaser__number">0${index + 1}</p>
-        <h3>${escapeHtml(item.title)}</h3>
+        <span class="service-teaser__icon">${serviceIcon(service.id)}</span>
+        <h3>${escapeHtml(title)}</h3>
         <p>${escapeHtml(item.short)}</p>
-        <a class="text-link" href="${attr(route(lang, "services"))}#${attr(service.id)}">${lang === "fr" ? "Détail de la prestation" : "Service details"}</a>
       </article>`;
     })
     .join("");
 
   const projectCards = previewProjects
     .map((project) => projectCard(project, lang, true))
-    .join("");
-
-  const steps = c.method
-    .map(([title, text], index) => `<article class="step" data-reveal>
-      <span class="step__index">${String(index + 1).padStart(2, "0")}</span>
-      <h3>${escapeHtml(title)}</h3>
-      <p>${escapeHtml(text)}</p>
-    </article>`)
     .join("");
 
   return layout(lang, "home", `<section class="home-hero" aria-labelledby="home-title">
@@ -347,11 +353,7 @@ function homePage(lang) {
     <p>${escapeHtml(h.lead)}</p>
     <div class="hero-actions">
       ${button(route(lang, "contact"), c.quoteCta, "primary")}
-      ${button(route(lang, "services"), c.secondaryCta, "light")}
-    </div>
-    <div class="hero-proof" aria-label="${lang === "fr" ? "Points de confiance" : "Trust points"}">
-      <p class="hero-proof__intro">${escapeHtml(h.trust)}</p>
-      <ul>${proof}</ul>
+      ${button(route(lang, "projects"), lang === "fr" ? "Voir les réalisations" : "View projects", "light")}
     </div>
   </div>
 </section>
@@ -376,27 +378,22 @@ function homePage(lang) {
   <div class="container project-preview-grid">${projectCards}</div>
   <div class="container section-action">${button(route(lang, "projects"), lang === "fr" ? "Voir la galerie" : "View the gallery", "secondary")}</div>
 </section>
-<section class="section">
-  <div class="container section-head">
-    <div>
-      <p class="eyebrow">${lang === "fr" ? "Méthode" : "Method"}</p>
-      <h2>${escapeHtml(h.methodTitle)}</h2>
-    </div>
-  </div>
-  <div class="container steps-grid">${steps}</div>
-</section>
-<section class="section section--split">
-  <div class="container split-layout">
-    <div class="split-layout__copy">
+<section class="section section--home-close">
+  <div class="container home-close">
+    <div class="home-close__about">
       <p class="eyebrow">${lang === "fr" ? "À propos" : "About"}</p>
       <h2>${escapeHtml(h.aboutTitle)}</h2>
       <p>${escapeHtml(h.aboutText)}</p>
       ${button(route(lang, "about"), lang === "fr" ? "Découvrir l'entreprise" : "About the business", "secondary")}
     </div>
-    <div class="split-layout__media">${imageMarkup(site.images.about, lang === "fr" ? "Massifs et entretien paysager" : "Planting beds and landscape maintenance", { className: "media-frame media-frame--tall" })}</div>
+    <div class="home-close__cta">
+      <p class="eyebrow">${lang === "fr" ? "Contact" : "Contact"}</p>
+      <h2>${escapeHtml(h.finalCtaTitle)}</h2>
+      <p>${escapeHtml(h.finalCtaText)}</p>
+      ${button(route(lang, "contact"), c.quoteCta, "primary")}
+    </div>
   </div>
 </section>
-${ctaBlock(lang, h.finalCtaTitle, h.finalCtaText)}
 `);
 }
 
@@ -464,6 +461,16 @@ function projectCard(project, lang, compact = false) {
     : `<div class="project-card__gallery">
       ${project.gallery.map((image, index) => imageMarkup(image, `${project.title[lang]} ${index + 1}`, { className: "project-thumb" })).join("")}
     </div>`;
+
+  if (compact) {
+    return `<article class="project-card project-card--compact" data-reveal>
+      <div class="project-card__media">${imageMarkup(project.cover, project.title[lang], { className: "project-cover" })}</div>
+      <div class="project-card__body">
+        <h3>${escapeHtml(project.title[lang])}</h3>
+        <p>${escapeHtml(project.category[lang])}</p>
+      </div>
+    </article>`;
+  }
 
   return `<article class="project-card${compact ? " project-card--compact" : ""}" data-reveal>
     <div class="project-card__media">${imageMarkup(project.cover, project.title[lang], { className: "project-cover" })}</div>

@@ -158,29 +158,29 @@ export const copy = {
     contactTitle: "Contact",
     home: {
       eyebrow: "Pernet Paysages · Vaud · Arc lémanique",
-      h1: "Des jardins pensés pour le lieu, les usages et le temps.",
+      h1: "Des extérieurs pensés pour durer.",
       lead:
-        "Création, rénovation et entretien de jardins dans le canton de Vaud et sur l'arc lémanique. Des choix clairs, un suivi précis et un extérieur facile à vivre.",
+        "Création, rénovation et entretien de jardins dans le canton de Vaud et sur l'arc lémanique.",
       trust:
-        "Pernet Paysages accompagne villas, PPE, architectes, entreprises et propriétaires privés, du suivi régulier à la création complète.",
+        "Pernet Paysages accompagne les extérieurs avec une approche directe, soignée et durable.",
       proof: [
         "Entreprise indépendante depuis 2017",
         "Création, rénovation et entretien régulier",
         "Vaud - Arc lémanique"
       ],
-      servicesTitle: "Créer, rénover et entretenir avec une ligne claire",
+      servicesTitle: "Un accompagnement complet, de la conception à l'entretien.",
       servicesLead:
-        "Un extérieur réussi doit tenir après la livraison. Les matériaux, les plantations et l'entretien sont pensés ensemble, pour un résultat beau et réaliste à vivre.",
-      projectsTitle: "Extérieurs, matières et détails de chantier",
+        "Chaque intervention reste lisible: comprendre le lieu, choisir les bons matériaux, planter avec mesure et prévoir l'entretien.",
+      projectsTitle: "Réalisations sélectionnées",
       projectsLead:
-        "Des jardins, terrasses et détails de chantier issus des images disponibles. Les légendes restent sobres lorsque le lieu exact n'est pas confirmé.",
-      methodTitle: "Une méthode claire, adaptée au terrain",
-      aboutTitle: "Une entreprise indépendante, proche du chantier",
+        "Une sélection d'images réelles, présentées sans lieux ni clients inventés.",
+      methodTitle: "Une méthode simple",
+      aboutTitle: "Le soin du paysage, le sens du détail.",
       aboutText:
-        "Depuis 2017, Pernet Paysages travaille à taille humaine: lire le lieu, proposer une intervention réaliste et suivre les détails jusqu'aux finitions.",
-      finalCtaTitle: "Vous avez un jardin à créer, reprendre ou entretenir ?",
+        "Une entreprise indépendante, proche du terrain, avec un suivi direct et des finitions propres.",
+      finalCtaTitle: "Parlons de votre aménagement extérieur.",
       finalCtaText:
-        "Décrivez votre projet en quelques lignes. Une visite sur place permet ensuite de préciser les besoins, les priorités et le budget."
+        "Un message court suffit pour cadrer une création, une rénovation ou un entretien régulier."
     },
     method: [
       ["Échange", "Clarifier vos attentes, vos usages, les contraintes et le délai souhaité."],
@@ -297,29 +297,29 @@ export const copy = {
     contactTitle: "Contact",
     home: {
       eyebrow: "Pernet Paysages · Vaud · Lake Geneva region",
-      h1: "Gardens shaped around the site, the way you live and long-term care.",
+      h1: "Outdoor spaces made to last.",
       lead:
-        "Garden creation, renovation and maintenance across the canton of Vaud and the Lake Geneva region. Clear choices, careful follow-up and outdoor spaces made to last.",
+        "Garden creation, renovation and maintenance across the canton of Vaud and the Lake Geneva region.",
       trust:
-        "Pernet Paysages works with villa owners, property co-owners, architects, companies and private clients, from regular care to complete garden creation.",
+        "Pernet Paysages works with a direct, careful and durable approach.",
       proof: [
         "Independent business since 2017",
         "Creation, renovation and regular care",
         "Vaud - Lake Geneva region"
       ],
-      servicesTitle: "Create, renovate and maintain with a clear line",
+      servicesTitle: "Complete support, from design to maintenance.",
       servicesLead:
-        "A good outdoor space must still make sense after delivery. Materials, planting and maintenance are considered together, for a result that stays manageable.",
-      projectsTitle: "Outdoor spaces, materials and site details",
+        "Each intervention stays clear: understand the place, choose the right materials, plant with restraint and plan future care.",
+      projectsTitle: "Selected projects",
       projectsLead:
-        "Gardens, terraces and site details from available project images. Exact places are not invented when they are not confirmed.",
-      methodTitle: "A simple method, adapted to the ground",
-      aboutTitle: "An independent business, close to the work on site",
+        "A selection of real images, presented without invented places or clients.",
+      methodTitle: "A simple method",
+      aboutTitle: "Landscape care with attention to detail.",
       aboutText:
-        "Since 2017, Pernet Paysages has worked at a human scale: understand the site, propose a realistic intervention and follow details through to completion.",
-      finalCtaTitle: "Do you have a garden to create, restore or maintain?",
+        "An independent business, close to the site, with direct follow-up and clean finishing.",
+      finalCtaTitle: "Let us discuss your outdoor project.",
       finalCtaText:
-        "Describe the project in a few lines. A site visit then helps clarify needs, priorities and budget."
+        "A short message is enough to frame a creation, renovation or regular maintenance request."
     },
     method: [
       ["Conversation", "Clarify expectations, uses, constraints and preferred timing."],
