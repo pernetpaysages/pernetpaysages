@@ -1,5 +1,45 @@
 import "../styles/main.css";
 
+function initPageTransitions() {
+  const motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const supportsTransitions = !motionQuery.matches;
+
+  const setReady = () => {
+    document.body.classList.remove("is-leaving");
+    document.body.classList.add("is-ready");
+  };
+
+  if (!supportsTransitions) {
+    document.documentElement.classList.remove("page-transitions");
+    setReady();
+    return;
+  }
+
+  window.addEventListener("pageshow", setReady);
+  setReady();
+
+  document.addEventListener("click", (event) => {
+    if (event.defaultPrevented || event.button !== 0) return;
+    if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+
+    const link = event.target.closest("a[href]");
+    if (!link) return;
+    if (link.target && link.target !== "_self") return;
+    if (link.hasAttribute("download")) return;
+
+    const url = new URL(link.href, window.location.href);
+    if (url.origin !== window.location.origin) return;
+    if (url.pathname === window.location.pathname && url.search === window.location.search) return;
+
+    event.preventDefault();
+    document.body.classList.add("is-leaving");
+
+    window.setTimeout(() => {
+      window.location.href = url.href;
+    }, 170);
+  });
+}
+
 function initMobileMenu() {
   const button = document.querySelector("[data-menu-toggle]");
   const panel = document.querySelector("[data-mobile-menu]");
@@ -141,6 +181,7 @@ function initContactForm() {
   });
 }
 
+initPageTransitions();
 initMobileMenu();
 initReveal();
 initContactForm();

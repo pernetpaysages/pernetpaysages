@@ -183,6 +183,9 @@ function head(lang, key) {
   <meta name="twitter:description" content="${escapedDescription}" />
   <meta name="twitter:image" content="${attr(ogImage)}" />
   <link rel="icon" href="/media/favicon.png" type="image/png" />
+  <script>
+    document.documentElement.classList.add("page-transitions");
+  </script>
   <script type="application/ld+json">${JSON.stringify(schema(lang))}</script>
   <script type="module" src="/src/scripts/main.js"></script>
 </head>`;
