@@ -128,8 +128,8 @@ function button(href, label, variant = "primary") {
 
 function whatsappMessage(lang) {
   return lang === "fr"
-    ? "Bonjour Luca, je souhaite parler de mon jardin."
-    : "Hello Luca, I would like to discuss a landscaping project.";
+    ? "Bonjour, je souhaite parler de mon jardin."
+    : "Hello, I would like to discuss a landscaping project.";
 }
 
 function whatsappLink(lang) {
@@ -712,7 +712,7 @@ function rootIndex() {
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="refresh" content="0; url=/fr/" />
   <title>Pernet Paysages</title>
-  <meta name="description" content="Pernet Paysages, paysagiste à Morges et dans le canton de Vaud." />
+  <meta name="description" content="Pernet Paysages, paysagiste dans le canton de Vaud et sur l'arc lémanique." />
   <link rel="canonical" href="${attr(site.baseUrl)}/" />
   <link rel="icon" href="/media/favicon.png" type="image/png" />
 </head>

@@ -1,6 +1,6 @@
 export const site = {
   name: "Pernet Paysages",
-  ownerName: "Luca PERNET",
+  ownerName: "Pernet Paysages",
   baseUrl: "https://pernet-paysages.ch",
   foundedYear: 2017,
   cfcYear: null,
@@ -70,7 +70,7 @@ export const pages = {
         "Création, rénovation et entretien de jardins dans le canton de Vaud et sur l'arc lémanique. Pernet Paysages réalise des extérieurs soignés, durables et faciles à vivre."
     },
     services: {
-      title: "Prestations de paysagisme à Morges et dans le canton de Vaud",
+      title: "Prestations de paysagisme dans le canton de Vaud",
       description:
         "Conception paysagère, création de jardin, rénovation, terrassement, terrasses, plantations, gazon, entretien, taille et élagage en Vaud."
     },
@@ -80,12 +80,12 @@ export const pages = {
         "Galerie de réalisations et détails de chantiers: jardins, terrasses, plantations, gazon, entretien et aménagement extérieur dans le canton de Vaud et l'arc lémanique."
     },
     about: {
-      title: "À propos | Pernet Paysages, paysagiste indépendant à Morges",
+      title: "À propos | Pernet Paysages, paysagiste indépendant en Vaud",
       description:
-        "Pernet Paysages est une entreprise indépendante de paysagisme fondée en 2017, active à Morges, dans le canton de Vaud et l'arc lémanique."
+        "Pernet Paysages est une entreprise indépendante de paysagisme fondée en 2017, active dans le canton de Vaud et sur l'arc lémanique."
     },
     contact: {
-      title: "Contact | Demande de devis paysagiste à Morges et en Vaud",
+      title: "Contact | Demande de devis paysagiste en Vaud",
       description:
         "Contactez Pernet Paysages pour un devis de création, rénovation, entretien de jardin, terrasse, plantation, élagage ou aménagement extérieur dans le canton de Vaud."
     },
@@ -97,7 +97,7 @@ export const pages = {
     legal: {
       title: "Mentions légales | Pernet Paysages",
       description:
-        "Informations légales et de contact de Pernet Paysages, entreprise de paysagisme active à Morges, dans le canton de Vaud et l'arc lémanique."
+        "Informations légales et de contact de Pernet Paysages, entreprise de paysagisme active dans le canton de Vaud et sur l'arc lémanique."
     }
   },
   en: {
@@ -107,7 +107,7 @@ export const pages = {
         "Garden creation, renovation and maintenance across the canton of Vaud and the Lake Geneva region. Pernet Paysages creates careful, durable outdoor spaces."
     },
     services: {
-      title: "Landscaping services in Morges and the canton of Vaud",
+      title: "Landscaping services in the canton of Vaud",
       description:
         "Landscape design, garden creation, renovation, earthworks, stone terraces, planting, lawns, maintenance, pruning and tree work in Vaud."
     },
@@ -117,12 +117,12 @@ export const pages = {
         "Selected project images and site details: gardens, terraces, planting, lawn work, maintenance and outdoor landscaping across Vaud and the Lake Geneva region."
     },
     about: {
-      title: "About | Pernet Paysages, independent landscaper in Morges",
+      title: "About | Pernet Paysages, independent landscaper in Vaud",
       description:
-        "Pernet Paysages is an independent landscaping business founded in 2017, working in Morges, across the canton of Vaud and the Lake Geneva region."
+        "Pernet Paysages is an independent landscaping business founded in 2017, working across the canton of Vaud and the Lake Geneva region."
     },
     contact: {
-      title: "Contact | Landscaping quote in Morges and Vaud",
+      title: "Contact | Landscaping quote in Vaud",
       description:
         "Contact Pernet Paysages for a quote for garden creation, renovation, maintenance, terraces, planting, pruning or outdoor landscaping in the canton of Vaud."
     },
@@ -134,7 +134,7 @@ export const pages = {
     legal: {
       title: "Legal notice | Pernet Paysages",
       description:
-        "Legal and contact information for Pernet Paysages, landscaping business active in Morges, Vaud and the Lake Geneva region."
+        "Legal and contact information for Pernet Paysages, landscaping business active in Vaud and the Lake Geneva region."
     }
   }
 };
@@ -202,17 +202,17 @@ export const copy = {
         "La galerie rassemble des images disponibles de jardins, terrasses, plantations, surfaces minérales et entretien. Les lieux exacts ne sont pas inventés.",
       ctaTitle: "Vous avez un projet similaire ?",
       ctaText:
-        "Écrivez en quelques lignes ce que vous souhaitez faire. Luca PERNET vous recontacte pour cadrer la suite."
+        "Écrivez en quelques lignes ce que vous souhaitez faire. Pernet Paysages vous recontacte pour cadrer la suite."
     },
     aboutPage: {
       eyebrow: "À propos",
       h1: "Un savoir-faire paysager à taille humaine",
       lead:
-        "Pernet Paysages est l'entreprise de Luca PERNET, paysagiste indépendant depuis 2017. Le travail repose sur une formation CFC de paysagiste, une pratique concrète du terrain et une attention constante portée aux finitions.",
+        "Pernet Paysages est une entreprise indépendante active depuis 2017. Le travail repose sur une formation CFC de paysagiste, une pratique concrète du terrain et une attention constante portée aux finitions.",
       sections: [
         [
           "Parcours",
-          "L'entreprise s'est construite autour d'une idée simple: rester proche du chantier et du client. Luca PERNET garde un lien direct avec la demande, le terrain et les finitions."
+          "L'entreprise s'est construite autour d'une idée simple: rester proche du chantier, du client, du terrain et des finitions."
         ],
         [
           "Manière de travailler",
@@ -224,7 +224,7 @@ export const copy = {
         ],
         [
           "Zone d’intervention",
-          "Pernet Paysages intervient à Morges, dans le canton de Vaud, sur l'arc lémanique et selon les projets jusqu'à Lausanne et les communes voisines."
+          "Pernet Paysages intervient dans le canton de Vaud, sur l'arc lémanique et selon les projets jusqu'à Lausanne et les communes voisines."
         ]
       ]
     },
@@ -265,7 +265,7 @@ export const copy = {
     legal: {
       h1: "Mentions légales",
       body: [
-        ["Responsable du site", "Luca PERNET, Pernet Paysages, entreprise de paysagisme active à Morges, dans le canton de Vaud et sur l'arc lémanique."],
+        ["Responsable du site", "Pernet Paysages, entreprise de paysagisme active dans le canton de Vaud et sur l'arc lémanique."],
         ["Contact", "Téléphone: 079 243 72 24. Email: pernet.paysages@gmail.com."],
         ["Contenus", "Les textes, images et éléments graphiques du site sont destinés à présenter l'activité de Pernet Paysages. Toute reprise doit être autorisée au préalable."],
         ["Informations administratives", "Pour toute demande administrative ou correction concernant les informations publiées, vous pouvez contacter Pernet Paysages par email."]
@@ -340,17 +340,17 @@ export const copy = {
         "The gallery brings together available images of gardens, terraces, planting, mineral surfaces and maintenance. Exact locations are not invented.",
       ctaTitle: "Planning a similar project?",
       ctaText:
-        "Send a short message about what you would like to do. Luca PERNET will get back to you to frame the next step."
+        "Send a short message about what you would like to do. Pernet Paysages will get back to you to frame the next step."
     },
     aboutPage: {
       eyebrow: "About",
       h1: "Landscape expertise at a human scale",
       lead:
-        "Pernet Paysages is Luca PERNET's independent landscaping business, founded in 2017. The work is based on CFC landscaping training, practical field experience and constant attention to finishing details.",
+        "Pernet Paysages is an independent landscaping business founded in 2017. The work is based on CFC landscaping training, practical field experience and constant attention to finishing details.",
       sections: [
         [
           "Background",
-          "The business has grown around a simple idea: stay close to the site and the client. Luca PERNET keeps direct contact with the request, the ground and the finishing details."
+          "The business has grown around a simple idea: stay close to the site, the client, the ground and the finishing details."
         ],
         [
           "How the work is approached",
@@ -362,7 +362,7 @@ export const copy = {
         ],
         [
           "Service area",
-          "Pernet Paysages works in Morges, across the canton of Vaud, throughout the Lake Geneva region and, depending on the project, around Lausanne and neighbouring municipalities."
+          "Pernet Paysages works across the canton of Vaud, throughout the Lake Geneva region and, depending on the project, around Lausanne and neighbouring municipalities."
         ]
       ]
     },
@@ -403,7 +403,7 @@ export const copy = {
     legal: {
       h1: "Legal notice",
       body: [
-        ["Website owner", "Luca PERNET, Pernet Paysages, landscaping business active in Morges, the canton of Vaud and the Lake Geneva region."],
+        ["Website owner", "Pernet Paysages, landscaping business active in Vaud and the Lake Geneva region."],
         ["Contact", "Phone: 079 243 72 24. Email: pernet.paysages@gmail.com."],
         ["Content", "Texts, images and graphic elements on this site are intended to present the work of Pernet Paysages. Any reuse requires prior authorisation."],
         ["Administrative information", "For any administrative request or correction regarding the published information, contact Pernet Paysages by email."]
@@ -593,7 +593,7 @@ export const services = [
 
 export const faqs = {
   fr: [
-    ["Intervenez-vous dans tout le canton de Vaud ?", "Oui, selon la nature du projet. La zone principale couvre Morges, le canton de Vaud et l'arc lémanique."],
+    ["Intervenez-vous dans tout le canton de Vaud ?", "Oui, selon la nature du projet. La zone principale couvre le canton de Vaud et l'arc lémanique."],
     ["Faites-vous aussi l'entretien régulier ?", "Oui. L'entretien de jardin, la tonte, la taille et les soins saisonniers font partie des prestations importantes."],
     ["Travaillez-vous avec les PPE et architectes ?", "Oui. Les demandes de PPE, immeubles, architectes, entreprises et propriétaires privés peuvent être étudiées."],
     ["Peut-on demander une visite sur place ?", "Oui, c'est souvent la meilleure manière de comprendre le terrain, les accès, les priorités et le budget."],
@@ -601,7 +601,7 @@ export const faqs = {
     ["Comment demander un devis ?", "Utilisez le formulaire court, WhatsApp, le téléphone ou l'email avec une description simple du besoin."]
   ],
   en: [
-    ["Do you work across the canton of Vaud?", "Yes, depending on the nature of the project. The main area covers Morges, Vaud and the Lake Geneva region."],
+    ["Do you work across the canton of Vaud?", "Yes, depending on the nature of the project. The main area covers Vaud and the Lake Geneva region."],
     ["Do you also provide regular maintenance?", "Yes. Garden maintenance, mowing, trimming and seasonal care are an important part of the work."],
     ["Do you work with co-owned properties and architects?", "Yes. Requests from property co-owners, buildings, architects, companies and private homeowners can be reviewed."],
     ["Can we request a site visit?", "Yes. It is often the best way to understand the terrain, access, priorities and budget."],
