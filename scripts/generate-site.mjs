@@ -328,9 +328,11 @@ function footer(lang) {
     </div>
     <div>
       <p class="footer-title">${escapeHtml(c.contactTitle)}</p>
-      <p><a href="tel:${attr(site.phoneHref)}">${escapeHtml(site.phoneDisplay)}</a><br />
-      <a href="mailto:${attr(site.email)}">${escapeHtml(site.email)}</a></p>
-      <p>${escapeHtml(site.serviceArea[lang])}</p>
+      <div class="footer-contact-list">
+        <a href="tel:${attr(site.phoneHref)}">${contactIcon("phone")}<span>${escapeHtml(site.phoneDisplay)}</span></a>
+        <a href="mailto:${attr(site.email)}">${contactIcon("email")}<span>${escapeHtml(site.email)}</span></a>
+        <p>${contactIcon("location")}<span>${escapeHtml(site.serviceArea[lang])}</span></p>
+      </div>
     </div>
     <div>
       <p class="footer-title">${escapeHtml(c.footerNav)}</p>
@@ -370,15 +372,37 @@ function ctaBlock(lang, title, text, linkLabel = copy[lang].quoteCta) {
 </section>`;
 }
 
-function serviceIcon(id) {
+function siteIcon(id) {
   const icons = {
-    conception: `<svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 39V10" /><path d="M24 20c-6 0-10-3-12-8 6 0 10 3 12 8Z" /><path d="M24 29c7 0 12-4 14-11-7 0-12 4-14 11Z" /></svg>`,
-    surfaces: `<svg viewBox="0 0 48 48" aria-hidden="true"><path d="M12 32h24" /><path d="M16 24h22" /><path d="M10 40h22" /><path d="M28 10l10 10" /><path d="M23 15l10 10" /></svg>`,
-    entretien: `<svg viewBox="0 0 48 48" aria-hidden="true"><path d="M15 34c10-2 16-8 20-20" /><path d="M17 18c4 0 8 3 9 7" /><path d="M28 28c4 0 7 2 9 5" /><path d="M12 38h24" /></svg>`,
-    plantations: `<svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 38V15" /><path d="M24 26c-6 0-10-3-12-8 6 0 10 3 12 8Z" /><path d="M24 23c6 0 10-3 12-8-6 0-10 3-12 8Z" /><path d="M14 38h20" /></svg>`
+    conception: `<svg viewBox="0 0 64 64" aria-hidden="true"><path d="M13 14h35v31H13z" /><path d="M17 14v31" /><circle cx="29" cy="31" r="8" /><path d="M29 24v16M25 31l4 4 5-6" /><path d="M42 44l12-12 5 5-12 12-8 3z" /><path d="M50 34l5 5" /></svg>`,
+    creation: `<svg viewBox="0 0 64 64" aria-hidden="true"><path d="M14 48h38" /><path d="M24 48V19c0-5 4-9 9-9s9 4 9 9v29" /><path d="M42 30h8v18" /><path d="M31 41V25" /><path d="M31 33c-5 0-8-3-9-7 5 0 8 3 9 7Z" /><path d="M31 38c5 0 8-3 9-7-5 0-8 3-9 7Z" /></svg>`,
+    renovation: `<svg viewBox="0 0 64 64" aria-hidden="true"><path d="M17 42h31v9H17z" /><path d="M17 33h31v9H17z" /><path d="M33 33V17" /><path d="M33 25c-6 0-10-3-12-8 6 0 10 3 12 8Z" /><path d="M33 27c6 0 10-3 12-8-6 0-10 3-12 8Z" /></svg>`,
+    terrassement: `<svg viewBox="0 0 64 64" aria-hidden="true"><path d="M10 47h38" /><path d="M15 46l22-6 10 6" /><path d="M15 39V15l22 8v16" /><path d="M37 23l9 8v9" /><path d="M44 34h9a4 4 0 0 1 4 4v8H45z" /><path d="M12 53h2M21 53h2M31 53h2M41 53h2M51 53h2" /></svg>`,
+    surfaces: `<svg viewBox="0 0 64 64" aria-hidden="true"><path d="M14 18h38v28H14z" /><path d="M14 34h38" /><path d="M25 18l-11 16" /><path d="M42 18L25 46" /><path d="M52 28L39 46" /></svg>`,
+    escaliers: `<svg viewBox="0 0 64 64" aria-hidden="true"><path d="M12 42h42" /><path d="M27 42v-7h7v-7h7v-7h7v21" /><path d="M13 30l35-22v13" /><path d="M12 47c2-4 5-4 7 0" /><path d="M53 20h8M53 27h8" /></svg>`,
+    plantations: `<svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="28" cy="26" r="13" /><path d="M28 13v35M21 27l7 7 9-11" /><path d="M15 48h36" /><path d="M36 48V39h8v9" /></svg>`,
+    gazon: `<svg viewBox="0 0 64 64" aria-hidden="true"><path d="M12 48h40" /><path d="M15 45c1-9 3-16 7-24" /><path d="M22 45c1-12 4-20 8-27" /><path d="M30 45c0-10 2-18 6-25" /><path d="M38 45c0-8 3-16 8-23" /><path d="M47 45c0-6 2-11 5-16" /><path d="M18 45c-1-6-3-11-6-15" /><path d="M27 45c-1-7-3-12-7-18" /><path d="M36 45c-1-8-4-14-8-19" /></svg>`,
+    entretien: `<svg viewBox="0 0 64 64" aria-hidden="true"><path d="M15 39l24-24 6 6-24 24z" /><path d="M39 15l6-6 8 8-8 6" /><path d="M19 18l27 27" /><path d="M42 44c5-8 15-5 16 5" /><path d="M38 52h23" /></svg>`,
+    "taille-tonte": `<svg viewBox="0 0 64 64" aria-hidden="true"><path d="M32 50V18" /><path d="M32 30c-7 0-12-4-14-10 7 0 12 4 14 10Z" /><path d="M32 26c7 0 12-4 14-10-7 0-12 4-14 10Z" /><path d="M32 42c-7 0-12-4-14-10 7 0 12 4 14 10Z" /><path d="M32 38c7 0 12-4 14-10-7 0-12 4-14 10Z" /><path d="M22 50h20" /></svg>`,
+    elagage: `<svg viewBox="0 0 64 64" aria-hidden="true"><path d="M37 44c9 0 16-7 16-16 0-7-5-13-12-15-4-7-15-5-17 3-7 1-12 7-12 14 0 8 6 14 14 14" /><path d="M32 29v22" /><path d="M25 38l7 7 7-10" /><path d="M41 43l17-13" /><path d="M48 38l6 6" /><path d="M51 34l6 6" /></svg>`,
+    arrosage: `<svg viewBox="0 0 64 64" aria-hidden="true"><path d="M18 46c8-12 19-18 33-20" /><path d="M18 46h28" /><path d="M27 41c4 2 7 5 9 9" /><path d="M44 23l7 7" /><path d="M14 51h2M22 53h2M31 52h2M41 54h2" /></svg>`,
+    eclairage: `<svg viewBox="0 0 64 64" aria-hidden="true"><path d="M32 13v8" /><path d="M19 18l6 6" /><path d="M45 18l-6 6" /><path d="M24 32a8 8 0 1 1 16 0c0 4-3 6-5 8v5h-6v-5c-2-2-5-4-5-8Z" /><path d="M27 51h10" /><path d="M14 55h36" /></svg>`,
+    piscines: `<svg viewBox="0 0 64 64" aria-hidden="true"><path d="M13 42c5 0 5 4 10 4s5-4 10-4 5 4 10 4 5-4 10-4" /><path d="M13 51c5 0 5 4 10 4s5-4 10-4 5 4 10 4 5-4 10-4" /><path d="M20 35V16h14" /><path d="M20 25h14" /><path d="M34 35V16h14" /><path d="M34 25h14" /></svg>`,
+    phone: `<svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="22" /><path d="M25 19c5 10 10 15 20 20l-5 7c-13-5-21-13-26-26l7-5z" /></svg>`,
+    email: `<svg viewBox="0 0 64 64" aria-hidden="true"><rect x="14" y="20" width="36" height="25" rx="3" /><path d="M16 23l16 13 16-13" /></svg>`,
+    whatsapp: `<svg viewBox="0 0 64 64" aria-hidden="true"><path d="M18 51l3-10a20 20 0 1 1 8 7z" /><path d="M27 22c4 8 8 12 16 16l-4 5c-9-3-16-10-19-19z" /></svg>`,
+    location: `<svg viewBox="0 0 64 64" aria-hidden="true"><path d="M32 55s16-17 16-30a16 16 0 0 0-32 0c0 13 16 30 16 30Z" /><circle cx="32" cy="25" r="6" /><path d="M22 57h20" /></svg>`
   };
 
   return icons[id] ?? icons.conception;
+}
+
+function serviceIcon(id) {
+  return siteIcon(id);
+}
+
+function contactIcon(id) {
+  return `<span class="contact-icon">${siteIcon(id)}</span>`;
 }
 
 function homePage(lang) {
@@ -480,7 +504,10 @@ function servicesPage(lang) {
       const item = service[lang];
       const includes = item.includes.map((include) => `<li>${escapeHtml(include)}</li>`).join("");
       return `<article id="${attr(service.id)}" class="service-detail" data-reveal>
-        <div class="service-detail__index">${String(index + 1).padStart(2, "0")}</div>
+        <div class="service-detail__mark">
+          <span class="service-detail__icon">${serviceIcon(service.id)}</span>
+          <span class="service-detail__index">${String(index + 1).padStart(2, "0")}</span>
+        </div>
         <div class="service-detail__body">
           <h2>${escapeHtml(item.title)}</h2>
           <p>${escapeHtml(item.short)}</p>
@@ -636,7 +663,10 @@ function contactPage(lang) {
     ${contactForm(lang)}
     <div class="contact-side">
       <div class="contact-note">
-        <p><strong>${lang === "fr" ? "Zone d’intervention" : "Service area"}</strong></p>
+        <div class="contact-note__head">
+          ${contactIcon("location")}
+          <p><strong>${lang === "fr" ? "Zone d’intervention" : "Service area"}</strong></p>
+        </div>
         <p>${escapeHtml(site.serviceArea[lang])}</p>
       </div>
       <div class="prepare-box">

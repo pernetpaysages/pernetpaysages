@@ -588,22 +588,25 @@ select:focus-visible {
 .service-teaser__icon {
   display: grid;
   place-items: center;
-  width: 56px;
-  height: 56px;
-  margin-bottom: 1.35rem;
-  border-radius: 50%;
-  background: var(--ivory);
+  width: 64px;
+  height: 64px;
+  margin-bottom: 1.25rem;
   color: var(--forest);
 }
 
-.service-teaser__icon svg {
-  width: 30px;
-  height: 30px;
+.service-teaser__icon svg,
+.service-detail__icon svg,
+.contact-icon svg {
   fill: none;
   stroke: currentColor;
-  stroke-width: 1.8;
+  stroke-width: 1.65;
   stroke-linecap: round;
   stroke-linejoin: round;
+}
+
+.service-teaser__icon svg {
+  width: 58px;
+  height: 58px;
 }
 
 .service-teaser p {
@@ -773,6 +776,25 @@ select:focus-visible {
 
 .service-detail:last-child {
   border-bottom: 0;
+}
+
+.service-detail__mark {
+  display: grid;
+  align-content: start;
+  gap: 0.55rem;
+  color: var(--forest);
+}
+
+.service-detail__icon {
+  display: grid;
+  place-items: center;
+  width: 54px;
+  height: 54px;
+}
+
+.service-detail__icon svg {
+  width: 48px;
+  height: 48px;
 }
 
 .service-detail__index {
@@ -988,6 +1010,31 @@ select:focus-visible {
 .contact-side {
   display: grid;
   gap: 1rem;
+}
+
+.contact-note__head {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.contact-note__head p {
+  margin: 0;
+}
+
+.contact-icon {
+  display: inline-grid;
+  place-items: center;
+  flex: 0 0 auto;
+  width: 34px;
+  height: 34px;
+  color: var(--forest);
+}
+
+.contact-icon svg {
+  width: 30px;
+  height: 30px;
 }
 
 .prepare-box {
@@ -1237,6 +1284,39 @@ textarea {
 
 .footer-nav a:hover {
   color: var(--forest);
+}
+
+.footer-contact-list {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.footer-contact-list a,
+.footer-contact-list p {
+  display: grid;
+  grid-template-columns: 28px minmax(0, 1fr);
+  align-items: center;
+  gap: 0.45rem;
+  margin: 0;
+  color: var(--muted);
+}
+
+.footer-contact-list a {
+  text-decoration: none;
+}
+
+.footer-contact-list a:hover {
+  color: var(--forest);
+}
+
+.footer-contact-list .contact-icon {
+  width: 28px;
+  height: 28px;
+}
+
+.footer-contact-list .contact-icon svg {
+  width: 24px;
+  height: 24px;
 }
 
 [data-reveal] {
