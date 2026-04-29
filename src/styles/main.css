@@ -594,19 +594,10 @@ select:focus-visible {
   color: var(--forest);
 }
 
-.service-teaser__icon svg,
-.service-detail__icon svg,
-.contact-icon svg {
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 1.65;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
-.service-teaser__icon svg {
+.service-teaser__icon img {
   width: 58px;
   height: 58px;
+  object-fit: contain;
 }
 
 .service-teaser p {
@@ -792,9 +783,16 @@ select:focus-visible {
   height: 54px;
 }
 
-.service-detail__icon svg {
+.service-detail__icon img {
   width: 48px;
   height: 48px;
+  object-fit: contain;
+}
+
+.service-teaser__icon:empty,
+.service-detail__icon:empty,
+.contact-icon:empty {
+  display: none;
 }
 
 .service-detail__index {
@@ -1032,9 +1030,10 @@ select:focus-visible {
   color: var(--forest);
 }
 
-.contact-icon svg {
+.contact-icon img {
   width: 30px;
   height: 30px;
+  object-fit: contain;
 }
 
 .prepare-box {
@@ -1314,9 +1313,10 @@ textarea {
   height: 28px;
 }
 
-.footer-contact-list .contact-icon svg {
+.footer-contact-list .contact-icon img {
   width: 24px;
   height: 24px;
+  object-fit: contain;
 }
 
 [data-reveal] {
