@@ -168,13 +168,13 @@ export const copy = {
         "Création, rénovation et entretien régulier",
         "Vaud - Arc lémanique"
       ],
-      servicesTitle: "Créer, rénover et entretenir sans perdre le fil",
+      servicesTitle: "Créer, rénover et entretenir avec une ligne claire",
       servicesLead:
         "Un extérieur réussi doit tenir après la livraison. Les matériaux, les plantations et l'entretien sont pensés ensemble, pour un résultat beau et réaliste à vivre.",
-      projectsTitle: "Une sélection d’extérieurs et de détails de chantier",
+      projectsTitle: "Extérieurs, matières et détails de chantier",
       projectsLead:
         "Des jardins, terrasses et détails de chantier issus des images disponibles. Les légendes restent sobres lorsque le lieu exact n'est pas confirmé.",
-      methodTitle: "Une méthode simple, lisible et adaptée au terrain",
+      methodTitle: "Une méthode claire, adaptée au terrain",
       aboutTitle: "Une entreprise indépendante, proche du chantier",
       aboutText:
         "Depuis 2017, Pernet Paysages travaille à taille humaine: lire le lieu, proposer une intervention réaliste et suivre les détails jusqu'aux finitions.",
@@ -190,7 +190,7 @@ export const copy = {
     ],
     servicesPage: {
       eyebrow: "Prestations",
-      h1: "Des prestations complètes, sans catalogue poussiéreux",
+      h1: "Des prestations complètes, clairement cadrées",
       lead:
         "Création paysagère, rénovation, ouvrages extérieurs et entretien régulier: chaque intervention est calibrée selon votre terrain, vos usages et le niveau de suivi souhaité.",
       introTitle: "Ce que Pernet Paysages peut prendre en charge",
@@ -307,10 +307,10 @@ export const copy = {
         "Creation, renovation and regular care",
         "Vaud - Lake Geneva region"
       ],
-      servicesTitle: "Create, renovate and maintain with one clear thread",
+      servicesTitle: "Create, renovate and maintain with a clear line",
       servicesLead:
         "A good outdoor space must still make sense after delivery. Materials, planting and maintenance are considered together, for a result that stays manageable.",
-      projectsTitle: "Selected outdoor spaces and site details",
+      projectsTitle: "Outdoor spaces, materials and site details",
       projectsLead:
         "Gardens, terraces and site details from available project images. Exact places are not invented when they are not confirmed.",
       methodTitle: "A simple method, adapted to the ground",
