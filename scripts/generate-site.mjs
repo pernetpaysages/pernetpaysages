@@ -647,7 +647,12 @@ function contactForm(lang) {
     <p class="form-note">${escapeHtml(c.consent)}</p>
     <p class="form-feedback" data-form-feedback aria-live="polite"></p>
     <div class="form-modal" data-form-modal hidden role="status" aria-live="polite">
-      <div class="form-modal__panel" data-form-modal-panel></div>
+      <div class="form-modal__panel" data-form-modal-panel>
+        <span class="form-modal__mark" data-form-modal-mark aria-hidden="true"></span>
+        <p class="form-modal__title" data-form-modal-title></p>
+        <p class="form-modal__text" data-form-modal-text></p>
+        <button class="form-modal__close" type="button" data-form-modal-close>${lang === "fr" ? "Fermer" : "Close"}</button>
+      </div>
     </div>
     <noscript><p class="form-note">${escapeHtml(c.fallback)}</p></noscript>
   </form>`;

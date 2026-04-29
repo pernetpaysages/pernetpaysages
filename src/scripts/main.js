@@ -94,19 +94,26 @@ function setFeedback(feedback, message, type) {
   feedback.className = `form-feedback is-${type}`;
 }
 
-function showFormModal(form, message, type) {
+function showFormModal(form, content, type) {
   const modal = form.querySelector("[data-form-modal]");
   const panel = form.querySelector("[data-form-modal-panel]");
+  const mark = form.querySelector("[data-form-modal-mark]");
+  const title = form.querySelector("[data-form-modal-title]");
+  const text = form.querySelector("[data-form-modal-text]");
+  const close = form.querySelector("[data-form-modal-close]");
   if (!modal || !panel) return;
 
-  panel.textContent = message;
+  if (mark) mark.textContent = type === "success" ? "✓" : "!";
+  if (title) title.textContent = content.title;
+  if (text) text.textContent = content.message;
   panel.className = `form-modal__panel is-${type}`;
   modal.hidden = false;
+  close?.focus({ preventScroll: true });
 
   window.clearTimeout(showFormModal.timeout);
   showFormModal.timeout = window.setTimeout(() => {
     modal.hidden = true;
-  }, type === "success" ? 5200 : 4200);
+  }, type === "success" ? 6200 : 5200);
 }
 
 function initContactForm() {
@@ -122,20 +129,50 @@ function initContactForm() {
     const honeypot = form.querySelector("[name='botcheck']");
     const text = form.dataset.lang === "fr"
       ? {
-          validation: "ERROR: il manque votre nom, un téléphone ou email, ou votre message.",
-          email: "Merci de renseigner une adresse email valide.",
-          success: "Merci, votre message a bien été envoyé.",
-          successModal: "Merci. Votre demande est bien partie, nous vous répondrons rapidement.",
-          error: "ERROR: une erreur est survenue. Vous pouvez aussi nous contacter par email ou téléphone.",
-          errorModal: "ERROR: le message n'a pas pu partir. Vous pouvez aussi appeler ou écrire par email."
+          validation: "Complétez le nom, le contact et le message.",
+          validationModal: {
+            title: "Il manque une information",
+            message: "Ajoutez votre nom, un téléphone ou email, puis un court message. Cela suffit pour envoyer la demande."
+          },
+          email: "L'adresse email semble incomplète.",
+          emailModal: {
+            title: "Email à vérifier",
+            message: "L'adresse contient un @, mais son format ne semble pas complet. Corrigez-la ou indiquez simplement un numéro de téléphone."
+          },
+          success: "Demande envoyée. Réponse rapide.",
+          successModal: {
+            title: "Demande envoyée",
+            message: "Merci. Votre message est bien parti, Pernet Paysages vous répondra rapidement."
+          },
+          error: "Le message n'a pas pu partir.",
+          errorModal: {
+            title: "Envoi impossible",
+            message: "Le formulaire n'a pas pu envoyer la demande. Vous pouvez appeler le 079 243 72 24 ou écrire à pernet.paysages@gmail.com."
+          },
+          sending: "Envoi en cours..."
         }
       : {
-          validation: "ERROR: your name, phone or email, or message is missing.",
-          email: "Please enter a valid email address.",
-          success: "Thank you, your message has been sent.",
-          successModal: "Thank you. Your request has been sent, and we will reply quickly.",
-          error: "ERROR: something went wrong. You can also contact us by email or phone.",
-          errorModal: "ERROR: the message could not be sent. You can also call or email."
+          validation: "Please add your name, contact detail and message.",
+          validationModal: {
+            title: "One detail is missing",
+            message: "Add your name, a phone number or email, then a short message. That is enough to send the request."
+          },
+          email: "The email address looks incomplete.",
+          emailModal: {
+            title: "Check the email",
+            message: "The address contains an @, but the format does not look complete. Correct it or simply enter a phone number."
+          },
+          success: "Request sent. We will reply quickly.",
+          successModal: {
+            title: "Request sent",
+            message: "Thank you. Your message has been sent, and Pernet Paysages will reply quickly."
+          },
+          error: "The message could not be sent.",
+          errorModal: {
+            title: "Could not send",
+            message: "The form could not send the request. You can call 079 243 72 24 or email pernet.paysages@gmail.com."
+          },
+          sending: "Sending..."
         };
 
     if (honeypot?.checked) {
@@ -147,14 +184,14 @@ function initContactForm() {
     if (!name.value.trim() || !message.value.trim() || !contactValue) {
       event.preventDefault();
       setFeedback(feedback, text.validation, "error");
-      showFormModal(form, text.validation, "error");
+      showFormModal(form, text.validationModal, "error");
       return;
     }
 
     if (contactValue.includes("@") && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(contactValue)) {
       event.preventDefault();
       setFeedback(feedback, text.email, "error");
-      showFormModal(form, text.email, "error");
+      showFormModal(form, text.emailModal, "error");
       return;
     }
 
@@ -162,6 +199,12 @@ function initContactForm() {
 
     event.preventDefault();
     const formData = new FormData(form);
+    const submit = form.querySelector("button[type='submit']");
+    const submitLabel = submit?.innerHTML;
+    if (submit) {
+      submit.disabled = true;
+      submit.innerHTML = `<span>${text.sending}</span>`;
+    }
 
     try {
       const response = await fetch(form.action, {
@@ -178,7 +221,26 @@ function initContactForm() {
     } catch {
       setFeedback(feedback, text.error, "error");
       showFormModal(form, text.errorModal, "error");
+    } finally {
+      if (submit) {
+        submit.disabled = false;
+        submit.innerHTML = submitLabel;
+      }
     }
+  });
+
+  form.querySelector("[data-form-modal-close]")?.addEventListener("click", () => {
+    const modal = form.querySelector("[data-form-modal]");
+    if (modal) modal.hidden = true;
+  });
+
+  form.querySelector("[data-form-modal]")?.addEventListener("click", (event) => {
+    if (event.target === event.currentTarget) event.currentTarget.hidden = true;
+  });
+
+  document.addEventListener("keydown", (event) => {
+    const modal = form.querySelector("[data-form-modal]");
+    if (event.key === "Escape" && modal && !modal.hidden) modal.hidden = true;
   });
 }
 

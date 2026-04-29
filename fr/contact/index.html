@@ -106,7 +106,12 @@
     <p class="form-note">En envoyant ce formulaire, vous acceptez que vos données soient utilisées uniquement pour répondre à votre demande.</p>
     <p class="form-feedback" data-form-feedback aria-live="polite"></p>
     <div class="form-modal" data-form-modal hidden role="status" aria-live="polite">
-      <div class="form-modal__panel" data-form-modal-panel></div>
+      <div class="form-modal__panel" data-form-modal-panel>
+        <span class="form-modal__mark" data-form-modal-mark aria-hidden="true"></span>
+        <p class="form-modal__title" data-form-modal-title></p>
+        <p class="form-modal__text" data-form-modal-text></p>
+        <button class="form-modal__close" type="button" data-form-modal-close>Fermer</button>
+      </div>
     </div>
     <noscript><p class="form-note">JavaScript est désactivé. Le formulaire sera envoyé normalement via Web3Forms.</p></noscript>
   </form>

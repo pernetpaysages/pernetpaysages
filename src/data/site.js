@@ -243,12 +243,12 @@ export const copy = {
           "En envoyant ce formulaire, vous acceptez que vos données soient utilisées uniquement pour répondre à votre demande.",
         fallback:
           "JavaScript est désactivé. Le formulaire sera envoyé normalement via Web3Forms.",
-        success: "Merci, votre message a bien été envoyé.",
-        successModal: "Merci. Votre demande est bien partie, nous vous répondrons rapidement.",
-        error: "ERROR: une erreur est survenue. Vous pouvez aussi nous contacter par email ou téléphone.",
-        errorModal: "ERROR: le message n'a pas pu partir. Vous pouvez aussi appeler ou écrire par email.",
+        success: "Demande envoyée. Réponse rapide.",
+        successModal: "Merci. Votre message est bien parti, Pernet Paysages vous répondra rapidement.",
+        error: "Le message n'a pas pu partir.",
+        errorModal: "Le formulaire n'a pas pu envoyer la demande. Vous pouvez appeler le 079 243 72 24 ou écrire à pernet.paysages@gmail.com.",
         validation:
-          "ERROR: il manque votre nom, un téléphone ou email, ou votre message."
+          "Complétez le nom, le contact et le message."
       }
     },
     privacy: {
@@ -381,12 +381,12 @@ export const copy = {
           "By submitting this form, you agree that your data is used only to respond to your request.",
         fallback:
           "JavaScript is disabled. The form will be submitted normally through Web3Forms.",
-        success: "Thank you, your message has been sent.",
-        successModal: "Thank you. Your request has been sent, and we will reply quickly.",
-        error: "ERROR: something went wrong. You can also contact us by email or phone.",
-        errorModal: "ERROR: the message could not be sent. You can also call or email.",
+        success: "Request sent. We will reply quickly.",
+        successModal: "Thank you. Your message has been sent, and Pernet Paysages will reply quickly.",
+        error: "The message could not be sent.",
+        errorModal: "The form could not send the request. You can call 079 243 72 24 or email pernet.paysages@gmail.com.",
         validation:
-          "ERROR: your name, phone or email, or message is missing."
+          "Please add your name, contact detail and message."
       }
     },
     privacy: {

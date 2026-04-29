@@ -1096,8 +1096,10 @@ textarea {
 }
 
 .form-feedback {
+  min-height: 1.45em;
   margin: 0;
   font-weight: 700;
+  font-size: 0.94rem;
 }
 
 .form-feedback.is-error {
@@ -1115,8 +1117,8 @@ textarea {
   display: grid;
   place-items: center;
   padding: 1rem;
-  background: rgba(18, 53, 37, 0.28);
-  backdrop-filter: blur(6px);
+  background: rgba(13, 36, 26, 0.34);
+  backdrop-filter: blur(10px);
 }
 
 .form-modal[hidden] {
@@ -1124,24 +1126,79 @@ textarea {
 }
 
 .form-modal__panel {
-  width: min(420px, 100%);
-  padding: 1.25rem 1.35rem;
-  border: 1px solid rgba(255, 253, 248, 0.70);
-  border-radius: var(--radius);
-  background: #fff;
-  color: var(--forest);
-  box-shadow: var(--shadow);
-  font-size: 1.08rem;
-  font-weight: 800;
+  width: min(440px, 100%);
+  display: grid;
+  justify-items: center;
+  gap: 0.72rem;
+  padding: clamp(1.35rem, 4vw, 2rem);
+  border: 1px solid rgba(22, 55, 39, 0.12);
+  border-radius: 6px;
+  background: var(--paper);
+  color: var(--charcoal);
+  box-shadow: 0 26px 70px rgba(12, 31, 23, 0.24);
   text-align: center;
 }
 
-.form-modal__panel.is-error {
-  color: #8a2c24;
+.form-modal__mark {
+  display: grid;
+  place-items: center;
+  width: 2.85rem;
+  height: 2.85rem;
+  border-radius: 50%;
+  background: var(--forest);
+  color: #fff;
+  font-family: var(--font-ui);
+  font-size: 1.45rem;
+  font-weight: 800;
+  line-height: 1;
 }
 
-.form-modal__panel.is-success {
+.form-modal__title {
+  margin: 0;
   color: var(--forest);
+  font-family: var(--font-serif);
+  font-size: clamp(1.45rem, 5vw, 2rem);
+  line-height: 1.05;
+}
+
+.form-modal__text {
+  max-width: 34ch;
+  margin: 0;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+.form-modal__close {
+  min-height: 42px;
+  margin-top: 0.25rem;
+  padding: 0.65rem 1.05rem;
+  border: 1px solid var(--forest);
+  border-radius: var(--radius);
+  background: var(--forest);
+  color: #fff;
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.form-modal__close:focus-visible {
+  outline: 3px solid rgba(167, 113, 61, 0.36);
+  outline-offset: 3px;
+}
+
+.form-modal__panel.is-error {
+  border-color: rgba(138, 44, 36, 0.18);
+}
+
+.form-modal__panel.is-error .form-modal__mark,
+.form-modal__panel.is-error .form-modal__close {
+  background: #8a2c24;
+  border-color: #8a2c24;
+}
+
+.form-modal__panel.is-error .form-modal__title {
+  color: #8a2c24;
 }
 
 .honeypot {
